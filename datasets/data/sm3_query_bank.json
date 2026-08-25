@@ -1,0 +1,2552 @@
+[
+  {
+    "question": "Can you tell me when the allergy with the code 735029006 was recorded?",
+    "sql": "SELECT a.start FROM allergies a LEFT JOIN patients p ON a.patient = p.id WHERE a.code='735029006';",
+    "class": "allergies"
+  },
+  {
+    "question": "When did the allergy described as Aspirin stop?",
+    "sql": "SELECT stop FROM allergies WHERE description='Aspirin';",
+    "class": "allergies"
+  },
+  {
+    "question": "What is the description of the allergy with the code 260147004?",
+    "sql": "SELECT DISTINCT description1, description2  FROM allergies WHERE code='260147004';",
+    "class": "allergies"
+  },
+  {
+    "question": "Can you provide the count of patients suffering from Allergy to substance (finding)?",
+    "sql": "SELECT COUNT(p.id) as number_patients_affected FROM allergies a LEFT JOIN patients p ON a.patient = p.id WHERE a.description='Allergy to substance (finding)';",
+    "class": "allergies"
+  },
+  {
+    "question": "What are the typical symptoms of the allergy described as Mold (organism)?",
+    "sql": "SELECT DISTINCT description1, description2 FROM allergies WHERE description='Mold (organism)';",
+    "class": "allergies"
+  },
+  {
+    "question": "How many patients have or had the allergy with the code 1191?",
+    "sql": "SELECT COUNT(p.*) as numberofpatientswithallergycode FROM allergies a LEFT JOIN patients p ON a.patient = p.id WHERE a.code='1191';",
+    "class": "allergies"
+  },
+  {
+    "question": "When did the allergy with the code 782576004 end?",
+    "sql": "SELECT stop  FROM allergies WHERE code='782576004';",
+    "class": "allergies"
+  },
+  {
+    "question": "Please provide me the patients with the allergy with the code 419199007.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM allergies a LEFT JOIN patients p ON a.patient = p.id WHERE a.code='419199007';",
+    "class": "allergies"
+  },
+  {
+    "question": "What kind of allergy has the code 102263004?",
+    "sql": "SELECT DISTINCT type  FROM allergies WHERE code='102263004';",
+    "class": "allergies"
+  },
+  {
+    "question": "When did the allergy with the code 419199007 start?",
+    "sql": "SELECT start FROM allergies WHERE code='419199007';",
+    "class": "allergies"
+  },
+  {
+    "question": "Can you give me the SNOMED code for the allergy with the code 256277009?",
+    "sql": "SELECT DISTINCT code FROM allergies a WHERE code='256277009';",
+    "class": "allergies"
+  },
+  {
+    "question": "What are the typical symptoms of the allergy described as Wheat (substance)?",
+    "sql": "SELECT DISTINCT description1, description2 FROM allergies WHERE description='Wheat (substance)';",
+    "class": "allergies"
+  },
+  {
+    "question": "What is the name of allergy with the code 264287008?",
+    "sql": "SELECT DISTINCT description  FROM allergies WHERE code='264287008';",
+    "class": "allergies"
+  },
+  {
+    "question": "Can you tell me when the allergy Peanut (substance) was recorded?",
+    "sql": "SELECT start FROM allergies WHERE description='Peanut (substance)';",
+    "class": "allergies"
+  },
+  {
+    "question": "Can you tell me when the allergy Grass pollen (substance) was recorded?",
+    "sql": "SELECT start FROM allergies WHERE description='Grass pollen (substance)';",
+    "class": "allergies"
+  },
+  {
+    "question": "When did the allergy with the code 1191 end?",
+    "sql": "SELECT stop  FROM allergies WHERE code='1191';",
+    "class": "allergies"
+  },
+  {
+    "question": "What is the date of the record for the allergy described as Ibuprofen?",
+    "sql": "SELECT start FROM allergies WHERE description='Ibuprofen';",
+    "class": "allergies"
+  },
+  {
+    "question": "Can you tell me when the allergy with the code 1191 was recorded?",
+    "sql": "SELECT a.start FROM allergies a LEFT JOIN patients p ON a.patient = p.id WHERE a.code='1191';",
+    "class": "allergies"
+  },
+  {
+    "question": "On which date was the allergy Grass pollen (substance) recorded?",
+    "sql": "SELECT start FROM allergies WHERE description='Grass pollen (substance)';",
+    "class": "allergies"
+  },
+  {
+    "question": "What kind of allergy has the code 419199007?",
+    "sql": "SELECT DISTINCT type  FROM allergies WHERE code='419199007';",
+    "class": "allergies"
+  },
+  {
+    "question": "What kind of allergy has the code 264287008?",
+    "sql": "SELECT DISTINCT type  FROM allergies WHERE code='264287008';",
+    "class": "allergies"
+  },
+  {
+    "question": "What is the classification of the allergy with the code 735029006?",
+    "sql": "SELECT DISTINCT category FROM allergies WHERE code='735029006';",
+    "class": "allergies"
+  },
+  {
+    "question": "What is the description of the allergy with the code 111088007?",
+    "sql": "SELECT DISTINCT description1, description2  FROM allergies WHERE code='111088007';",
+    "class": "allergies"
+  },
+  {
+    "question": "How many patients have the allergy described as Allergy to substance (finding)?",
+    "sql": "SELECT COUNT(*) as count_allergic_patients FROM allergies a LEFT JOIN patients p ON a.patient = p.id WHERE a.description='Allergy to substance (finding)';",
+    "class": "allergies"
+  },
+  {
+    "question": "When did the allergy with the code 29046 end?",
+    "sql": "SELECT stop  FROM allergies WHERE code='29046';",
+    "class": "allergies"
+  },
+  {
+    "question": "What is the total number of patients diagnosed with House dust mite (organism)?",
+    "sql": "SELECT COUNT(*) as count_allergic_patients FROM allergies a LEFT JOIN patients p ON a.patient = p.id WHERE a.description='House dust mite (organism)';",
+    "class": "allergies"
+  },
+  {
+    "question": "When was the allergy with the code 735029006 recorded?",
+    "sql": "SELECT start  FROM allergies WHERE code='735029006';",
+    "class": "allergies"
+  },
+  {
+    "question": "On which date was the allergy House dust mite (organism) recorded?",
+    "sql": "SELECT start FROM allergies WHERE description='House dust mite (organism)';",
+    "class": "allergies"
+  },
+  {
+    "question": "What is the total number of patients diagnosed with Tree nut (substance)?",
+    "sql": "SELECT COUNT(*) as count_allergic_patients FROM allergies a LEFT JOIN patients p ON a.patient = p.id WHERE a.description='Tree nut (substance)';",
+    "class": "allergies"
+  },
+  {
+    "question": "In what type of allergy does the description Mold (organism) fall?",
+    "sql": "SELECT DISTINCT type FROM allergies WHERE description='Mold (organism)';",
+    "class": "allergies"
+  },
+  {
+    "question": "In which encounter ID was the care plan with code 385691007 used?",
+    "sql": "SELECT DISTINCT encounter FROM careplans WHERE code='385691007';",
+    "class": "careplans"
+  },
+  {
+    "question": "When was the care plan Physiotherapy care plan (record artifact) used?",
+    "sql": "SELECT start FROM careplans WHERE description='Physiotherapy care plan (record artifact)';",
+    "class": "careplans"
+  },
+  {
+    "question": "When was the care plan with the code 53950000 used?",
+    "sql": "SELECT start FROM careplans WHERE code='53950000';",
+    "class": "careplans"
+  },
+  {
+    "question": "When was the care plan with the code 225358003 used?",
+    "sql": "SELECT start FROM careplans WHERE code='225358003';",
+    "class": "careplans"
+  },
+  {
+    "question": "Who has been treated with the care plan Routine antenatal care?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM patients p LEFT JOIN careplans c ON c.patient=p.id WHERE c.description='Routine antenatal care';",
+    "class": "careplans"
+  },
+  {
+    "question": "What is the start date of the care plan Self-care interventions (procedure)?",
+    "sql": "SELECT start FROM careplans WHERE description='Self-care interventions (procedure)';",
+    "class": "careplans"
+  },
+  {
+    "question": "Please provide me a reason for the use of the care plan with code 736285004.",
+    "sql": "SELECT reasondescription FROM careplans WHERE code='736285004';",
+    "class": "careplans"
+  },
+  {
+    "question": "In which encounter was the care plan with code 698360004 administered?",
+    "sql": "SELECT DISTINCT e.description FROM careplans c LEFT JOIN encounters e ON c.encounter=e.id WHERE c.code='698360004';",
+    "class": "careplans"
+  },
+  {
+    "question": "What is the reason for using the care plan with code 698360004?",
+    "sql": "SELECT reasondescription FROM careplans WHERE code='698360004';",
+    "class": "careplans"
+  },
+  {
+    "question": "What is the start date of the care plan with code 47387005?",
+    "sql": "SELECT start FROM careplans WHERE code='47387005';",
+    "class": "careplans"
+  },
+  {
+    "question": "Who has been treated with the care plan Lifestyle education regarding hypertension?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM patients p LEFT JOIN careplans c ON c.patient=p.id WHERE c.description='Lifestyle education regarding hypertension';",
+    "class": "careplans"
+  },
+  {
+    "question": "In which encounter ID was the care plan with code 53950000 used?",
+    "sql": "SELECT DISTINCT encounter FROM careplans WHERE code='53950000';",
+    "class": "careplans"
+  },
+  {
+    "question": "Please provide me the patients with the care plan Physiotherapy care plan (record artifact).",
+    "sql": "SELECT DISTINCT p.first, p.last FROM patients p LEFT JOIN careplans c ON c.patient=p.id WHERE c.description='Physiotherapy care plan (record artifact)';",
+    "class": "careplans"
+  },
+  {
+    "question": "What is the reason for the use of the care plan Respiratory therapy?",
+    "sql": "SELECT reasondescription FROM careplans WHERE description='Respiratory therapy';",
+    "class": "careplans"
+  },
+  {
+    "question": "When was the care plan with the code 53950000 used?",
+    "sql": "SELECT start FROM careplans WHERE code='53950000';",
+    "class": "careplans"
+  },
+  {
+    "question": "Who has been treated with the care plan Mental health care plan (record artifact)?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM patients p LEFT JOIN careplans c ON c.patient=p.id WHERE c.description='Mental health care plan (record artifact)';",
+    "class": "careplans"
+  },
+  {
+    "question": "In which encounter was the care plan with code 698360004 administered?",
+    "sql": "SELECT DISTINCT e.description FROM careplans c LEFT JOIN encounters e ON c.encounter=e.id WHERE c.code='698360004';",
+    "class": "careplans"
+  },
+  {
+    "question": "In which encounter was the care plan Physiotherapy care plan (record artifact) administered?",
+    "sql": "SELECT DISTINCT e.description FROM careplans c LEFT JOIN encounters e ON c.encounter=e.id WHERE c.description='Physiotherapy care plan (record artifact)';",
+    "class": "careplans"
+  },
+  {
+    "question": "What is the reason for using the care plan with code 386522008?",
+    "sql": "SELECT reasondescription FROM careplans WHERE code='386522008';",
+    "class": "careplans"
+  },
+  {
+    "question": "In which encounter ID was the care plan with code 698360004 used?",
+    "sql": "SELECT DISTINCT encounter FROM careplans WHERE code='698360004';",
+    "class": "careplans"
+  },
+  {
+    "question": "When was the care plan Fracture care used?",
+    "sql": "SELECT start FROM careplans WHERE description='Fracture care';",
+    "class": "careplans"
+  },
+  {
+    "question": "When was the care plan Overactivity/inattention behavior management used?",
+    "sql": "SELECT start FROM careplans WHERE description='Overactivity/inattention behavior management';",
+    "class": "careplans"
+  },
+  {
+    "question": "What is the start date of the care plan with code 736690008?",
+    "sql": "SELECT start FROM careplans WHERE code='736690008';",
+    "class": "careplans"
+  },
+  {
+    "question": "What is the reason for the use of the care plan Head injury rehabilitation?",
+    "sql": "SELECT reasondescription FROM careplans WHERE description='Head injury rehabilitation';",
+    "class": "careplans"
+  },
+  {
+    "question": "Please provide me the reason for the use of the care plan Wound care.",
+    "sql": "SELECT reasondescription FROM careplans WHERE description='Wound care';",
+    "class": "careplans"
+  },
+  {
+    "question": "What is the reason for using the care plan with code 53950000?",
+    "sql": "SELECT reasondescription FROM careplans WHERE code='53950000';",
+    "class": "careplans"
+  },
+  {
+    "question": "Please provide me the encounters that were related to the care plan with code 734163000.",
+    "sql": "SELECT DISTINCT e.description FROM careplans c LEFT JOIN encounters e ON c.encounter=e.id WHERE c.code='734163000';",
+    "class": "careplans"
+  },
+  {
+    "question": "What is the start date of the care plan with code 773513001?",
+    "sql": "SELECT start FROM careplans WHERE code='773513001';",
+    "class": "careplans"
+  },
+  {
+    "question": "Please provide me a reason for the use of the care plan with code 53950000.",
+    "sql": "SELECT reasondescription FROM careplans WHERE code='53950000';",
+    "class": "careplans"
+  },
+  {
+    "question": "Please provide me a reason for the use of the care plan with code 53950000.",
+    "sql": "SELECT reasondescription FROM careplans WHERE code='53950000';",
+    "class": "careplans"
+  },
+  {
+    "question": "Which provider is associated with the claim of ID 389a7a27-5c6e-d338-7845-af4b9b94111b?",
+    "sql": "SELECT DISTINCT pr.name FROM claims cl LEFT JOIN providers pr ON cl.providerid=pr.id WHERE cl.id='389a7a27-5c6e-d338-7845-af4b9b94111b';",
+    "class": "claims"
+  },
+  {
+    "question": "Who is the patient associated with the claim 351b6a86-8ccf-8437-113c-759849a95332?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM claims cl LEFT JOIN patients p ON cl.patientid= p.id WHERE cl.id='351b6a86-8ccf-8437-113c-759849a95332';",
+    "class": "claims"
+  },
+  {
+    "question": "Who is the patient associated with the claim 3eddd7c9-251a-4b53-dd7d-a7c4a01a831d?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM claims cl LEFT JOIN patients p ON cl.patientid= p.id WHERE cl.id='3eddd7c9-251a-4b53-dd7d-a7c4a01a831d';",
+    "class": "claims"
+  },
+  {
+    "question": "What is the department id of the claim with the ID 3e335081-eef8-e133-6bc1-f8bdd880f481?",
+    "sql": "SELECT departmentid FROM claims WHERE id='3e335081-eef8-e133-6bc1-f8bdd880f481';",
+    "class": "claims"
+  },
+  {
+    "question": "Please provide me the diagnosis of the claim with ID 6ee40a50-1d43-811b-7654-19cdb83eb608.",
+    "sql": "SELECT diagnosis1, diagnosis2, diagnosis3, diagnosis4, diagnosis5, diagnosis6 departmentid FROM claims WHERE id='6ee40a50-1d43-811b-7654-19cdb83eb608';",
+    "class": "claims"
+  },
+  {
+    "question": "Which provider is associated with the claim of ID 96eb39be-2394-a38f-b3a2-37858be430d6?",
+    "sql": "SELECT DISTINCT pr.name FROM claims cl LEFT JOIN providers pr ON cl.providerid=pr.id WHERE cl.id='96eb39be-2394-a38f-b3a2-37858be430d6';",
+    "class": "claims"
+  },
+  {
+    "question": "Please provide me the diagnosis of the claim with ID f8d56ab5-66ec-8090-b31c-0a7cffaa955b.",
+    "sql": "SELECT diagnosis1, diagnosis2, diagnosis3, diagnosis4, diagnosis5, diagnosis6 departmentid FROM claims WHERE id='f8d56ab5-66ec-8090-b31c-0a7cffaa955b';",
+    "class": "claims"
+  },
+  {
+    "question": "On which date did the illness associated to the claim ID 8717a40d-decb-0776-7bec-b7e47747e41d occur?",
+    "sql": "SELECT currentillnessdate FROM claims WHERE id='8717a40d-decb-0776-7bec-b7e47747e41d';",
+    "class": "claims"
+  },
+  {
+    "question": "Please provide me the patients with the claim ID 24195039-aa58-82a5-6837-27699c8cf0e0.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM claims cl LEFT JOIN patients p ON cl.patientid= p.id WHERE cl.id='24195039-aa58-82a5-6837-27699c8cf0e0';",
+    "class": "claims"
+  },
+  {
+    "question": "Please provide me the patients with the claim ID 07a66d73-72d3-2afb-2775-8fa30dc8bb55.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM claims cl LEFT JOIN patients p ON cl.patientid= p.id WHERE cl.id='07a66d73-72d3-2afb-2775-8fa30dc8bb55';",
+    "class": "claims"
+  },
+  {
+    "question": "Which provider is associated with the claim of ID 2490b6c5-b46d-846b-c92d-ad2c18a1f9dd?",
+    "sql": "SELECT DISTINCT pr.name FROM claims cl LEFT JOIN providers pr ON cl.providerid=pr.id WHERE cl.id='2490b6c5-b46d-846b-c92d-ad2c18a1f9dd';",
+    "class": "claims"
+  },
+  {
+    "question": "Please provide me the diagnosis of the claim with ID a368b4da-64c5-6e9b-0a6e-f2de2a7b4fa3.",
+    "sql": "SELECT diagnosis1, diagnosis2, diagnosis3, diagnosis4, diagnosis5, diagnosis6 departmentid FROM claims WHERE id='a368b4da-64c5-6e9b-0a6e-f2de2a7b4fa3';",
+    "class": "claims"
+  },
+  {
+    "question": "Please provide me the department id of the claim with ID 9bd6def3-523b-ccd0-5772-671cc1a0b720.",
+    "sql": "SELECT departmentid FROM claims WHERE id='9bd6def3-523b-ccd0-5772-671cc1a0b720';",
+    "class": "claims"
+  },
+  {
+    "question": "What is the department id of the claim with the ID 6458aafa-5ff6-2909-3f16-1f3ac9c5ff18?",
+    "sql": "SELECT departmentid FROM claims WHERE id='6458aafa-5ff6-2909-3f16-1f3ac9c5ff18';",
+    "class": "claims"
+  },
+  {
+    "question": "Who is the patient associated with the claim cb8e3ae9-359c-7a36-547a-74c18c64dfc1?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM claims cl LEFT JOIN patients p ON cl.patientid= p.id WHERE cl.id='cb8e3ae9-359c-7a36-547a-74c18c64dfc1';",
+    "class": "claims"
+  },
+  {
+    "question": "On which date did the illness associated to the claim ID e6bbebb9-3b8c-a488-e68c-d283ba6aefff occur?",
+    "sql": "SELECT currentillnessdate FROM claims WHERE id='e6bbebb9-3b8c-a488-e68c-d283ba6aefff';",
+    "class": "claims"
+  },
+  {
+    "question": "Who is the patient associated with the claim 4ca5ac64-588c-fa9a-72d8-60826997df93?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM claims cl LEFT JOIN patients p ON cl.patientid= p.id WHERE cl.id='4ca5ac64-588c-fa9a-72d8-60826997df93';",
+    "class": "claims"
+  },
+  {
+    "question": "Please provide me the diagnosis of the claim with ID 6749f344-d230-d1af-9249-a57c6809e98d.",
+    "sql": "SELECT diagnosis1, diagnosis2, diagnosis3, diagnosis4, diagnosis5, diagnosis6 departmentid FROM claims WHERE id='6749f344-d230-d1af-9249-a57c6809e98d';",
+    "class": "claims"
+  },
+  {
+    "question": "Please provide me the provider associated with the claim of ID 4cd97015-d4ad-f5b7-a4b5-22dd600d8e71.",
+    "sql": "SELECT DISTINCT pr.name FROM claims cl LEFT JOIN providers pr ON cl.providerid=pr.id WHERE cl.id='4cd97015-d4ad-f5b7-a4b5-22dd600d8e71';",
+    "class": "claims"
+  },
+  {
+    "question": "When was the service date of the claim with the ID a3bb50e3-dc3a-a127-c6be-2f0a103ccb01?",
+    "sql": "SELECT servicedate FROM claims WHERE id='a3bb50e3-dc3a-a127-c6be-2f0a103ccb01';",
+    "class": "claims"
+  },
+  {
+    "question": "Which provider is associated with the claim of ID 97fc9540-47e9-cf6d-ad89-a5de5d8cff1a?",
+    "sql": "SELECT DISTINCT pr.name FROM claims cl LEFT JOIN providers pr ON cl.providerid=pr.id WHERE cl.id='97fc9540-47e9-cf6d-ad89-a5de5d8cff1a';",
+    "class": "claims"
+  },
+  {
+    "question": "On which date did the illness associated to the claim ID 0972daab-2ad8-20b0-03a6-22d33575713f occur?",
+    "sql": "SELECT currentillnessdate FROM claims WHERE id='0972daab-2ad8-20b0-03a6-22d33575713f';",
+    "class": "claims"
+  },
+  {
+    "question": "Please provide me the service date of the claim with ID 8e45ce42-777e-bcc9-e41a-282dda419e04.",
+    "sql": "SELECT servicedate FROM claims WHERE id='8e45ce42-777e-bcc9-e41a-282dda419e04';",
+    "class": "claims"
+  },
+  {
+    "question": "When was the service date of the claim with the ID 9b898b86-5ffa-919e-b7d9-7ef48b36682b?",
+    "sql": "SELECT servicedate FROM claims WHERE id='9b898b86-5ffa-919e-b7d9-7ef48b36682b';",
+    "class": "claims"
+  },
+  {
+    "question": "Please provide me the service date of the claim with ID 8ace446d-36b9-5b31-2d06-7f79715c0123.",
+    "sql": "SELECT servicedate FROM claims WHERE id='8ace446d-36b9-5b31-2d06-7f79715c0123';",
+    "class": "claims"
+  },
+  {
+    "question": "Please provide me the provider associated with the claim of ID a470050b-ef1b-c2ee-b524-1eed951843db.",
+    "sql": "SELECT DISTINCT pr.name FROM claims cl LEFT JOIN providers pr ON cl.providerid=pr.id WHERE cl.id='a470050b-ef1b-c2ee-b524-1eed951843db';",
+    "class": "claims"
+  },
+  {
+    "question": "Please provide me the provider associated with the claim of ID 6ce80d19-1b48-8f6f-509c-b9d7326cecb6.",
+    "sql": "SELECT DISTINCT pr.name FROM claims cl LEFT JOIN providers pr ON cl.providerid=pr.id WHERE cl.id='6ce80d19-1b48-8f6f-509c-b9d7326cecb6';",
+    "class": "claims"
+  },
+  {
+    "question": "Please provide me the diagnosis of the claim with ID dedc7508-9390-747d-40ec-4f8cb879f822.",
+    "sql": "SELECT diagnosis1, diagnosis2, diagnosis3, diagnosis4, diagnosis5, diagnosis6 departmentid FROM claims WHERE id='dedc7508-9390-747d-40ec-4f8cb879f822';",
+    "class": "claims"
+  },
+  {
+    "question": "Please provide me the patients with the claim ID f7f24316-252a-0cec-fc53-1ea78e1e3348.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM claims cl LEFT JOIN patients p ON cl.patientid= p.id WHERE cl.id='f7f24316-252a-0cec-fc53-1ea78e1e3348';",
+    "class": "claims"
+  },
+  {
+    "question": "Please provide me the provider associated with the claim of ID a0b09ffd-9b82-6d5e-976b-0dcacef791f3.",
+    "sql": "SELECT DISTINCT pr.name FROM claims cl LEFT JOIN providers pr ON cl.providerid=pr.id WHERE cl.id='a0b09ffd-9b82-6d5e-976b-0dcacef791f3';",
+    "class": "claims"
+  },
+  {
+    "question": "What provider is associated with the claim transaction 91a640c9-b811-f176-5ae9-aee63faeb118?",
+    "sql": "SELECT DISTINCT pr.name FROM claims_transactions clt LEFT JOIN providers pr ON clt.providerid=pr.id WHERE clt.id='91a640c9-b811-f176-5ae9-aee63faeb118';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "Please provide me the amount transacted with the claim transaction ID b73b1996-5765-52eb-3414-6bf8b14af882.",
+    "sql": "SELECT amount FROM claims_transactions WHERE id='b73b1996-5765-52eb-3414-6bf8b14af882';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "Please provide me the charge ID of the claim transaction e59b1e2f-ecf5-1a65-720e-19b50edc4a3d.",
+    "sql": "SELECT chargeid FROM claims_transactions WHERE id='e59b1e2f-ecf5-1a65-720e-19b50edc4a3d';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "Please provide me the patient associated with the claim transaction 230f95c9-1a92-e795-7db8-5e6543a22112.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM claims_transactions clt LEFT JOIN patients p ON clt.patientid=p.id WHERE clt.id='230f95c9-1a92-e795-7db8-5e6543a22112';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "Please provide me the charge ID of the claim transaction ac457d24-c0e8-448d-7eab-6c857c5c4e85.",
+    "sql": "SELECT chargeid FROM claims_transactions WHERE id='ac457d24-c0e8-448d-7eab-6c857c5c4e85';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "What is the charge ID of the claim transaction 5ce0f3a2-3899-9dcf-da3b-9c6ad4c2ad08?",
+    "sql": "SELECT chargeid FROM claims_transactions WHERE id='5ce0f3a2-3899-9dcf-da3b-9c6ad4c2ad08';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "What is the amount of the claims transferred with the claim transaction ID 9cec6659-5d95-2c3e-9051-afe2c52bc298?",
+    "sql": "SELECT amount FROM claims_transactions WHERE id='9cec6659-5d95-2c3e-9051-afe2c52bc298';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "Please provide me the patient associated with the claim transaction 727a8d32-f2cd-8ef6-036e-251eb9070cb9.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM claims_transactions clt LEFT JOIN patients p ON clt.patientid=p.id WHERE clt.id='727a8d32-f2cd-8ef6-036e-251eb9070cb9';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "Please provide me the charge ID of the claim transaction 8e9ef773-d738-3ce8-b5a9-3b42368ee71a.",
+    "sql": "SELECT chargeid FROM claims_transactions WHERE id='8e9ef773-d738-3ce8-b5a9-3b42368ee71a';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "What patients are associated with the claim transaction 97096cda-c62c-e2ba-7a68-1bcba7f55c86?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM claims_transactions clt LEFT JOIN patients p ON clt.patientid=p.id WHERE clt.id='97096cda-c62c-e2ba-7a68-1bcba7f55c86';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "What patients are associated with the claim transaction 09ec4a34-e7d8-71ae-ef82-c70e38d48f33?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM claims_transactions clt LEFT JOIN patients p ON clt.patientid=p.id WHERE clt.id='09ec4a34-e7d8-71ae-ef82-c70e38d48f33';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "Please provide me the provider associated with the claim transaction c9ea34cb-cb36-3be2-0db8-947ae41c32ed.",
+    "sql": "SELECT pr.name FROM claims_transactions clt LEFT JOIN providers pr ON clt.providerid=pr.id WHERE clt.id='c9ea34cb-cb36-3be2-0db8-947ae41c32ed';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "What is the amount of the claims transferred with the claim transaction ID aebd2a62-d563-3beb-7e92-016d19319b24?",
+    "sql": "SELECT amount FROM claims_transactions WHERE id='aebd2a62-d563-3beb-7e92-016d19319b24';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "What type of claim transaction is transaction with ID f51a65e5-9b1d-fe04-dc4a-3d720e198526?",
+    "sql": "SELECT type FROM claims_transactions WHERE id='f51a65e5-9b1d-fe04-dc4a-3d720e198526';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "Please provide me the provider associated with the claim transaction e59b1eaf-e7f5-1a65-720e-1a3509dc4a3d.",
+    "sql": "SELECT pr.name FROM claims_transactions clt LEFT JOIN providers pr ON clt.providerid=pr.id WHERE clt.id='e59b1eaf-e7f5-1a65-720e-1a3509dc4a3d';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "Please provide me the amount transacted with the claim transaction ID 457a4bec-4717-176e-b798-bee9bab10d56.",
+    "sql": "SELECT amount FROM claims_transactions WHERE id='457a4bec-4717-176e-b798-bee9bab10d56';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "Please provide me the amount transacted with the claim transaction ID 97d6fe6d-2fef-2210-fd76-34c1e65ff8c9.",
+    "sql": "SELECT amount FROM claims_transactions WHERE id='97d6fe6d-2fef-2210-fd76-34c1e65ff8c9';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "What patients are associated with the claim transaction 65ab19df-5d75-e956-d7c9-8cd923f4900e?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM claims_transactions clt LEFT JOIN patients p ON clt.patientid=p.id WHERE clt.id='65ab19df-5d75-e956-d7c9-8cd923f4900e';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "What provider is associated with the claim transaction 6cbcb0fe-8f7b-7ee5-6f3a-a5981a40dc6a?",
+    "sql": "SELECT DISTINCT pr.name FROM claims_transactions clt LEFT JOIN providers pr ON clt.providerid=pr.id WHERE clt.id='6cbcb0fe-8f7b-7ee5-6f3a-a5981a40dc6a';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "What is the charge ID of the claim transaction 4578aea5-c25b-36ae-b797-219e9a06f2e6?",
+    "sql": "SELECT chargeid FROM claims_transactions WHERE id='4578aea5-c25b-36ae-b797-219e9a06f2e6';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "What is the claim ID of the claim transaction a0ec35a5-83eb-056b-49a5-f92316be43d8?",
+    "sql": "SELECT claimid FROM claims_transactions WHERE id='a0ec35a5-83eb-056b-49a5-f92316be43d8';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "What provider is associated with the claim transaction b6ac677d-75d7-a55a-7f26-33648fd2403c?",
+    "sql": "SELECT DISTINCT pr.name FROM claims_transactions clt LEFT JOIN providers pr ON clt.providerid=pr.id WHERE clt.id='b6ac677d-75d7-a55a-7f26-33648fd2403c';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "Please provide me the claim ID of the claim transaction 5e59b1ea-64ff-51a6-d720-e1a2d71dc4a3.",
+    "sql": "SELECT claimid FROM claims_transactions WHERE id='5e59b1ea-64ff-51a6-d720-e1a2d71dc4a3';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "Please provide me the provider associated with the claim transaction 8afa4982-011e-9258-56d9-0af8e92281fd.",
+    "sql": "SELECT pr.name FROM claims_transactions clt LEFT JOIN providers pr ON clt.providerid=pr.id WHERE clt.id='8afa4982-011e-9258-56d9-0af8e92281fd';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "Please provide me the claim ID of the claim transaction d95253b1-cec6-6595-52bb-b951051afe2c.",
+    "sql": "SELECT claimid FROM claims_transactions WHERE id='d95253b1-cec6-6595-52bb-b951051afe2c';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "Please provide me the amount transacted with the claim transaction ID 50c251a7-3ec3-8d70-7df6-3871c6a4799f.",
+    "sql": "SELECT amount FROM claims_transactions WHERE id='50c251a7-3ec3-8d70-7df6-3871c6a4799f';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "What provider is associated with the claim transaction 21b64d60-bfe2-e147-f76b-1cfbe9f8b4e3?",
+    "sql": "SELECT DISTINCT pr.name FROM claims_transactions clt LEFT JOIN providers pr ON clt.providerid=pr.id WHERE clt.id='21b64d60-bfe2-e147-f76b-1cfbe9f8b4e3';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "What provider is associated with the claim transaction c46e664a-ded5-636a-02db-0ea3c0b0363e?",
+    "sql": "SELECT DISTINCT pr.name FROM claims_transactions clt LEFT JOIN providers pr ON clt.providerid=pr.id WHERE clt.id='c46e664a-ded5-636a-02db-0ea3c0b0363e';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "Please provide me the procedure code of the claim transaction 78dc2745-1f10-41c9-0078-e7542e43cfe6.",
+    "sql": "SELECT procedurecode FROM claims_transactions WHERE id='78dc2745-1f10-41c9-0078-e7542e43cfe6';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "What is the amount of the claims transferred with the claim transaction ID f7b7ee53-4f4b-0fe8-a40d-c6a3772a5981?",
+    "sql": "SELECT amount FROM claims_transactions WHERE id='f7b7ee53-4f4b-0fe8-a40d-c6a3772a5981';",
+    "class": "claims_transactions"
+  },
+  {
+    "question": "What is the stop date of the condition with code 423315002?",
+    "sql": "SELECT stop FROM conditions WHERE code='423315002';",
+    "class": "conditions"
+  },
+  {
+    "question": "What are the encounters associated with the condition Refugee (person)?",
+    "sql": "SELECT DISTINCT e.description FROM conditions c LEFT JOIN encounters e ON c.encounter=e.id WHERE c.description='Refugee (person)';",
+    "class": "conditions"
+  },
+  {
+    "question": "Please provide me the patients with the condition Received certificate of high school equivalency (finding).",
+    "sql": "SELECT DISTINCT p.first, p.last FROM conditions c LEFT JOIN patients p ON c.patient=p.id WHERE c.description='Received certificate of high school equivalency (finding)';",
+    "class": "conditions"
+  },
+  {
+    "question": "Please provide me the encounters that are related to the condition with code 195662009.",
+    "sql": "SELECT DISTINCT e.description FROM conditions c LEFT JOIN encounters e ON c.encounter=e.id WHERE c.code='195662009';",
+    "class": "conditions"
+  },
+  {
+    "question": "Please provide me the encounters that are related to the condition Medication review due (situation).",
+    "sql": "SELECT DISTINCT e.description FROM conditions c LEFT JOIN encounters e ON c.encounter=e.id WHERE c.description='Medication review due (situation)';",
+    "class": "conditions"
+  },
+  {
+    "question": "What are the encounters associated with the condition Full-time employment (finding)?",
+    "sql": "SELECT DISTINCT e.description FROM conditions c LEFT JOIN encounters e ON c.encounter=e.id WHERE c.description='Full-time employment (finding)';",
+    "class": "conditions"
+  },
+  {
+    "question": "Who has been treated for the condition with code 73438004?",
+    "sql": "SELECT DISTINCT  p.first, p.last FROM conditions c LEFT JOIN patients p ON c.patient=p.id WHERE c.code='73438004';",
+    "class": "conditions"
+  },
+  {
+    "question": "What is the start date of the condition with code 160903007?",
+    "sql": "SELECT start FROM conditions WHERE code='160903007';",
+    "class": "conditions"
+  },
+  {
+    "question": "What is the stop date of the condition with code 72892002?",
+    "sql": "SELECT stop FROM conditions WHERE code='72892002';",
+    "class": "conditions"
+  },
+  {
+    "question": "What is the stop date of the condition Medication review due (situation)?",
+    "sql": "SELECT stop FROM conditions WHERE description='Medication review due (situation)';",
+    "class": "conditions"
+  },
+  {
+    "question": "What is the stop date of the condition Normal pregnancy?",
+    "sql": "SELECT stop FROM conditions WHERE description='Normal pregnancy';",
+    "class": "conditions"
+  },
+  {
+    "question": "What are the encounters associated with the condition Medication review due (situation)?",
+    "sql": "SELECT DISTINCT e.description FROM conditions c LEFT JOIN encounters e ON c.encounter=e.id WHERE c.description='Medication review due (situation)';",
+    "class": "conditions"
+  },
+  {
+    "question": "What is the description of the condition with code 314529007?",
+    "sql": "SELECT DISTINCT description FROM conditions WHERE code='314529007';",
+    "class": "conditions"
+  },
+  {
+    "question": "Please provide me the patients with the condition Medication review due (situation).",
+    "sql": "SELECT DISTINCT p.first, p.last FROM conditions c LEFT JOIN patients p ON c.patient=p.id WHERE c.description='Medication review due (situation)';",
+    "class": "conditions"
+  },
+  {
+    "question": "Please provide me the patients with the condition Medication review due (situation).",
+    "sql": "SELECT DISTINCT p.first, p.last FROM conditions c LEFT JOIN patients p ON c.patient=p.id WHERE c.description='Medication review due (situation)';",
+    "class": "conditions"
+  },
+  {
+    "question": "What is the stop date of the condition with code 80394007?",
+    "sql": "SELECT stop FROM conditions WHERE code='80394007';",
+    "class": "conditions"
+  },
+  {
+    "question": "Please provide me the encounters that are related to the condition with code 271737000.",
+    "sql": "SELECT DISTINCT e.description FROM conditions c LEFT JOIN encounters e ON c.encounter=e.id WHERE c.code='271737000';",
+    "class": "conditions"
+  },
+  {
+    "question": "What is the start date of the condition Full-time employment (finding)?",
+    "sql": "SELECT start FROM conditions WHERE description='Full-time employment (finding)';",
+    "class": "conditions"
+  },
+  {
+    "question": "What is the start date of the condition with code 68496003?",
+    "sql": "SELECT start FROM conditions WHERE code='68496003';",
+    "class": "conditions"
+  },
+  {
+    "question": "Please provide me the encounters that are related to the condition Sinusitis (disorder).",
+    "sql": "SELECT DISTINCT e.description FROM conditions c LEFT JOIN encounters e ON c.encounter=e.id WHERE c.description='Sinusitis (disorder)';",
+    "class": "conditions"
+  },
+  {
+    "question": "Who has been treated for the condition Medication review due (situation)?",
+    "sql": "SELECT p.first, p.last FROM conditions c LEFT JOIN patients p ON c.patient=p.id WHERE c.description='Medication review due (situation)';",
+    "class": "conditions"
+  },
+  {
+    "question": "What is the stop date of the condition with code 314529007?",
+    "sql": "SELECT stop FROM conditions WHERE code='314529007';",
+    "class": "conditions"
+  },
+  {
+    "question": "What is the encounter associated with the condition with code 314529007?",
+    "sql": "SELECT DISTINCT e.description FROM conditions c LEFT JOIN encounters e ON c.encounter=e.id WHERE c.code='314529007';",
+    "class": "conditions"
+  },
+  {
+    "question": "What is the stop date of the condition with code 312608009?",
+    "sql": "SELECT stop FROM conditions WHERE code='312608009';",
+    "class": "conditions"
+  },
+  {
+    "question": "What is the start date of the condition with code 314529007?",
+    "sql": "SELECT start FROM conditions WHERE code='314529007';",
+    "class": "conditions"
+  },
+  {
+    "question": "Please provide me the patients with the condition Viral sinusitis (disorder).",
+    "sql": "SELECT DISTINCT p.first, p.last FROM conditions c LEFT JOIN patients p ON c.patient=p.id WHERE c.description='Viral sinusitis (disorder)';",
+    "class": "conditions"
+  },
+  {
+    "question": "What is the stop date of the condition Limited social contact (finding)?",
+    "sql": "SELECT stop FROM conditions WHERE description='Limited social contact (finding)';",
+    "class": "conditions"
+  },
+  {
+    "question": "What are the encounters associated with the condition Medication review due (situation)?",
+    "sql": "SELECT DISTINCT e.description FROM conditions c LEFT JOIN encounters e ON c.encounter=e.id WHERE c.description='Medication review due (situation)';",
+    "class": "conditions"
+  },
+  {
+    "question": "What is the start date of the condition Fever (finding)?",
+    "sql": "SELECT start FROM conditions WHERE description='Fever (finding)';",
+    "class": "conditions"
+  },
+  {
+    "question": "What is the description of the condition with code 10509002?",
+    "sql": "SELECT DISTINCT description FROM conditions WHERE code='10509002';",
+    "class": "conditions"
+  },
+  {
+    "question": "Who are the patients associated with the device Appliance for sleep apnea (physical object)?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM devices d LEFT JOIN patients p ON d.patient=p.id WHERE d.description='Appliance for sleep apnea (physical object)';",
+    "class": "devices"
+  },
+  {
+    "question": "What is the code of the device with the udi code (01)69980022597334(11)970925(17)221010(10)3672967(21)867693030?",
+    "sql": "SELECT code FROM devices WHERE udi='(01)69980022597334(11)970925(17)221010(10)3672967(21)867693030';",
+    "class": "devices"
+  },
+  {
+    "question": "What encounter is required during the use of the device Home continuous positive airway pressure unit (physical object)?",
+    "sql": "SELECT DISTINCT e.description FROM devices d LEFT JOIN encounters e ON d.encounter=e.id WHERE d.description='Home continuous positive airway pressure unit (physical object)';",
+    "class": "devices"
+  },
+  {
+    "question": "Please provide me the encounters that are related to the device with code 272265001.",
+    "sql": "SELECT DISTINCT e.description FROM devices d LEFT JOIN encounters e ON d.encounter=e.id WHERE d.code='272265001';",
+    "class": "devices"
+  },
+  {
+    "question": "Please provide me the encounters that are related to the device Respiratory humidifier (physical object).",
+    "sql": "SELECT DISTINCT e.description FROM devices d LEFT JOIN encounters e ON d.encounter=e.id WHERE d.description='Respiratory humidifier (physical object)';",
+    "class": "devices"
+  },
+  {
+    "question": "Please provide me the udi code related to the device Blood glucose meter (physical object).",
+    "sql": "SELECT udi FROM devices WHERE description='Blood glucose meter (physical object)';",
+    "class": "devices"
+  },
+  {
+    "question": "What is the code of the device with the udi code (01)79260802338274(11)910725(17)160808(10)7253002(21)801604883190?",
+    "sql": "SELECT code FROM devices WHERE udi='(01)79260802338274(11)910725(17)160808(10)7253002(21)801604883190';",
+    "class": "devices"
+  },
+  {
+    "question": "When was the device Polysomnography analyzer (physical object) implanted or initially used?",
+    "sql": "SELECT start FROM devices WHERE description='Polysomnography analyzer (physical object)';",
+    "class": "devices"
+  },
+  {
+    "question": "Please provide me the udi code related to the device with code 701077002.",
+    "sql": "SELECT udi FROM devices WHERE code='701077002';",
+    "class": "devices"
+  },
+  {
+    "question": "Please provide me the name of the patients related to the device with code 706180003.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM devices d LEFT JOIN patients p ON d.patient=p.id WHERE d.code='706180003';",
+    "class": "devices"
+  },
+  {
+    "question": "Please provide me the name of the patients related to the device Respiratory humidifier (physical object).",
+    "sql": "SELECT DISTINCT p.first, p.last FROM devices d LEFT JOIN patients p ON d.patient=p.id WHERE d.description='Respiratory humidifier (physical object)';",
+    "class": "devices"
+  },
+  {
+    "question": "What encounter is required during the use of the device with code 337414009?",
+    "sql": "SELECT DISTINCT e.description FROM devices d LEFT JOIN encounters e ON d.encounter=e.id WHERE d.code='337414009';",
+    "class": "devices"
+  },
+  {
+    "question": "Please provide me the name of the patients related to the device Respiratory humidifier (physical object).",
+    "sql": "SELECT DISTINCT p.first, p.last FROM devices d LEFT JOIN patients p ON d.patient=p.id WHERE d.description='Respiratory humidifier (physical object)';",
+    "class": "devices"
+  },
+  {
+    "question": "What encounter is required during the use of the device Appliance for sleep apnea (physical object)?",
+    "sql": "SELECT DISTINCT e.description FROM devices d LEFT JOIN encounters e ON d.encounter=e.id WHERE d.description='Appliance for sleep apnea (physical object)';",
+    "class": "devices"
+  },
+  {
+    "question": "Who are the patients associated with the device with code 272265001?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM devices d LEFT JOIN patients p ON d.patient=p.id WHERE d.code='272265001';",
+    "class": "devices"
+  },
+  {
+    "question": "What is the description of the device with code 91537007?",
+    "sql": "SELECT DISTINCT description FROM devices WHERE code='91537007';",
+    "class": "devices"
+  },
+  {
+    "question": "Please provide me the encounters that are related to the device with code 170615005.",
+    "sql": "SELECT DISTINCT e.description FROM devices d LEFT JOIN encounters e ON d.encounter=e.id WHERE d.code='170615005';",
+    "class": "devices"
+  },
+  {
+    "question": "Who are the patients associated with the device Polysomnography analyzer (physical object)?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM devices d LEFT JOIN patients p ON d.patient=p.id WHERE d.description='Polysomnography analyzer (physical object)';",
+    "class": "devices"
+  },
+  {
+    "question": "When was the device with code 705417005 implanted or initially used?",
+    "sql": "SELECT start FROM devices WHERE code='705417005';",
+    "class": "devices"
+  },
+  {
+    "question": "When was the device with code 706180003 implanted or initially used?",
+    "sql": "SELECT start FROM devices WHERE code='706180003';",
+    "class": "devices"
+  },
+  {
+    "question": "When was the device Respiratory humidifier (physical object) implanted or initially used?",
+    "sql": "SELECT start FROM devices WHERE description='Respiratory humidifier (physical object)';",
+    "class": "devices"
+  },
+  {
+    "question": "What encounter is required during the use of the device Appliance for sleep apnea (physical object)?",
+    "sql": "SELECT DISTINCT e.description FROM devices d LEFT JOIN encounters e ON d.encounter=e.id WHERE d.description='Appliance for sleep apnea (physical object)';",
+    "class": "devices"
+  },
+  {
+    "question": "What is the udi code for the device with code 702172008?",
+    "sql": "SELECT udi FROM devices WHERE code='702172008';",
+    "class": "devices"
+  },
+  {
+    "question": "Please provide me the udi code related to the device with code 337414009.",
+    "sql": "SELECT udi FROM devices WHERE code='337414009';",
+    "class": "devices"
+  },
+  {
+    "question": "What is the udi code for the device Respiratory humidifier (physical object)?",
+    "sql": "SELECT udi FROM devices WHERE description='Respiratory humidifier (physical object)';",
+    "class": "devices"
+  },
+  {
+    "question": "What is the udi code for the device with code 228869008?",
+    "sql": "SELECT udi FROM devices WHERE code='228869008';",
+    "class": "devices"
+  },
+  {
+    "question": "Please provide me the encounters that are related to the device Blood glucose meter (physical object).",
+    "sql": "SELECT DISTINCT e.description FROM devices d LEFT JOIN encounters e ON d.encounter=e.id WHERE d.description='Blood glucose meter (physical object)';",
+    "class": "devices"
+  },
+  {
+    "question": "Please provide me the udi code related to the device with code 702172008.",
+    "sql": "SELECT udi FROM devices WHERE code='702172008';",
+    "class": "devices"
+  },
+  {
+    "question": "What is the name of the device with the udi code (01)23807293993649(11)171007(17)421022(10)365632680597658(21)481621179227721?",
+    "sql": "SELECT description FROM devices WHERE udi='(01)23807293993649(11)171007(17)421022(10)365632680597658(21)481621179227721';",
+    "class": "devices"
+  },
+  {
+    "question": "When was the device Home continuous positive airway pressure unit (physical object) implanted or initially used?",
+    "sql": "SELECT start FROM devices WHERE description='Home continuous positive airway pressure unit (physical object)';",
+    "class": "devices"
+  },
+  {
+    "question": "When did the encounter 49532515-e9e4-9401-4de9-16ef08b60983 occur?",
+    "sql": "SELECT start FROM encounters WHERE id='49532515-e9e4-9401-4de9-16ef08b60983';",
+    "class": "encounters"
+  },
+  {
+    "question": "What is the reason description for encounter 87ca95aa-d4c9-4019-eff1-efb85049b3e6?",
+    "sql": "SELECT reasondescription FROM encounters WHERE id='87ca95aa-d4c9-4019-eff1-efb85049b3e6';",
+    "class": "encounters"
+  },
+  {
+    "question": "Please provide me the name of the provider associated with the encounter ae23b292-6c19-ff81-a6ce-6d95a7b600fb.",
+    "sql": "SELECT provider FROM encounters WHERE id='ae23b292-6c19-ff81-a6ce-6d95a7b600fb';",
+    "class": "encounters"
+  },
+  {
+    "question": "What is the total claim cost encounter 88314a7a-cff0-dfdb-af22-a86c849469a1?",
+    "sql": "SELECT total_claim_cost FROM encounters WHERE id='88314a7a-cff0-dfdb-af22-a86c849469a1';",
+    "class": "encounters"
+  },
+  {
+    "question": "What is the reason code and description of the encounter 6f81e73c-201b-d4a7-5e90-e33db16b6e79?",
+    "sql": "SELECT reasoncode, reasondescription FROM encounters WHERE id='6f81e73c-201b-d4a7-5e90-e33db16b6e79';",
+    "class": "encounters"
+  },
+  {
+    "question": "What is the description of encounter 2267c59b-fe0b-3f9d-7d0e-1586062e625e?",
+    "sql": "SELECT description FROM encounters WHERE id='2267c59b-fe0b-3f9d-7d0e-1586062e625e';",
+    "class": "encounters"
+  },
+  {
+    "question": "Please provide me the name of the payer associated with the encounter b56d8db6-2d87-230e-8f00-03688976f5a8.",
+    "sql": "SELECT payer FROM encounters WHERE id='b56d8db6-2d87-230e-8f00-03688976f5a8';",
+    "class": "encounters"
+  },
+  {
+    "question": "Please provide me the name of the payer associated with the encounter d05250b8-5dbe-b754-b3d8-0be67c1193ee.",
+    "sql": "SELECT payer FROM encounters WHERE id='d05250b8-5dbe-b754-b3d8-0be67c1193ee';",
+    "class": "encounters"
+  },
+  {
+    "question": "What is the reason description for encounter 1872dafc-08f8-f12a-7700-8fd3dd186626?",
+    "sql": "SELECT reasondescription FROM encounters WHERE id='1872dafc-08f8-f12a-7700-8fd3dd186626';",
+    "class": "encounters"
+  },
+  {
+    "question": "Which provider is linked to the encounter a2c10ffe-6732-b478-c4d9-69b13b150a41?",
+    "sql": "SELECT provider FROM encounters WHERE id='a2c10ffe-6732-b478-c4d9-69b13b150a41';",
+    "class": "encounters"
+  },
+  {
+    "question": "What is the reason code and description of the encounter 1833e4f9-182e-4d67-64a2-cef080a4635f?",
+    "sql": "SELECT reasoncode, reasondescription FROM encounters WHERE id='1833e4f9-182e-4d67-64a2-cef080a4635f';",
+    "class": "encounters"
+  },
+  {
+    "question": "What is the reason for encounter 42baf2ce-3181-80e2-e815-7fe7667cb41a?",
+    "sql": "SELECT reasondescription FROM encounters WHERE id='42baf2ce-3181-80e2-e815-7fe7667cb41a';",
+    "class": "encounters"
+  },
+  {
+    "question": "Please provide me the name of the organization associated with encounter ae454923-b922-3cd0-a8bd-7d1f878e2c44.",
+    "sql": "SELECT organization FROM encounters WHERE id='ae454923-b922-3cd0-a8bd-7d1f878e2c44';",
+    "class": "encounters"
+  },
+  {
+    "question": "What type of encounter is encounter 54ded6ad-2ca6-2a57-0774-c87565e54a55?",
+    "sql": "SELECT encounterclass FROM encounters WHERE id='54ded6ad-2ca6-2a57-0774-c87565e54a55';",
+    "class": "encounters"
+  },
+  {
+    "question": "Please provide me the name of the organization associated with encounter d1ceb17d-683c-a25d-67b2-b3115e3d3e8e.",
+    "sql": "SELECT organization FROM encounters WHERE id='d1ceb17d-683c-a25d-67b2-b3115e3d3e8e';",
+    "class": "encounters"
+  },
+  {
+    "question": "Please provide me the name of the provider associated with the encounter 3498a14a-87c8-c82f-2bb1-5affd74db2c8.",
+    "sql": "SELECT provider FROM encounters WHERE id='3498a14a-87c8-c82f-2bb1-5affd74db2c8';",
+    "class": "encounters"
+  },
+  {
+    "question": "Please provide me the name of the payer associated with the encounter d2e95740-ca96-b364-3729-0809fd8ca0e3.",
+    "sql": "SELECT payer FROM encounters WHERE id='d2e95740-ca96-b364-3729-0809fd8ca0e3';",
+    "class": "encounters"
+  },
+  {
+    "question": "Which organization is linked to the encounter 194b453f-5fbb-8828-0940-1dc33ebe6544?",
+    "sql": "SELECT organization FROM encounters WHERE id='194b453f-5fbb-8828-0940-1dc33ebe6544';",
+    "class": "encounters"
+  },
+  {
+    "question": "What is the reason for encounter 7d8cea06-9714-66af-1685-6e9d14e44cb8?",
+    "sql": "SELECT reasondescription FROM encounters WHERE id='7d8cea06-9714-66af-1685-6e9d14e44cb8';",
+    "class": "encounters"
+  },
+  {
+    "question": "What is the reason description for encounter 9c72aca2-15fa-fd19-9f8d-88d72670473a?",
+    "sql": "SELECT reasondescription FROM encounters WHERE id='9c72aca2-15fa-fd19-9f8d-88d72670473a';",
+    "class": "encounters"
+  },
+  {
+    "question": "Please provide me the name of the payer associated with the encounter c51b5179-c902-72d7-051a-4bc8ef4727de.",
+    "sql": "SELECT payer FROM encounters WHERE id='c51b5179-c902-72d7-051a-4bc8ef4727de';",
+    "class": "encounters"
+  },
+  {
+    "question": "Please provide the reason code and description for the encounter 8fd0ebb5-3156-7abe-b856-ebb24bd3323a.",
+    "sql": "SELECT reasoncode, reasondescription FROM encounters WHERE id='8fd0ebb5-3156-7abe-b856-ebb24bd3323a';",
+    "class": "encounters"
+  },
+  {
+    "question": "Which provider is linked to the encounter c2c75161-ecd7-8767-2d4f-f902413a44a4?",
+    "sql": "SELECT provider FROM encounters WHERE id='c2c75161-ecd7-8767-2d4f-f902413a44a4';",
+    "class": "encounters"
+  },
+  {
+    "question": "Which payer is linked to the encounter 6adba6b1-feef-6b8c-44b0-731886335fb8?",
+    "sql": "SELECT payer FROM encounters WHERE id='6adba6b1-feef-6b8c-44b0-731886335fb8';",
+    "class": "encounters"
+  },
+  {
+    "question": "Please provide the reason code and description for the encounter 2c460a1d-ea4d-77f2-b393-7b654798cd36.",
+    "sql": "SELECT reasoncode, reasondescription FROM encounters WHERE id='2c460a1d-ea4d-77f2-b393-7b654798cd36';",
+    "class": "encounters"
+  },
+  {
+    "question": "Please provide me the name of the provider associated with the encounter b7b345d4-12a9-abc7-cdfe-8b523538273e.",
+    "sql": "SELECT provider FROM encounters WHERE id='b7b345d4-12a9-abc7-cdfe-8b523538273e';",
+    "class": "encounters"
+  },
+  {
+    "question": "Which payer is linked to the encounter 42624d43-9eb9-5aa8-bfc9-721fce265dfe?",
+    "sql": "SELECT payer FROM encounters WHERE id='42624d43-9eb9-5aa8-bfc9-721fce265dfe';",
+    "class": "encounters"
+  },
+  {
+    "question": "What is the total claim cost encounter 148d0054-f9db-50dd-883d-ebec202ed802?",
+    "sql": "SELECT total_claim_cost FROM encounters WHERE id='148d0054-f9db-50dd-883d-ebec202ed802';",
+    "class": "encounters"
+  },
+  {
+    "question": "What is the reason for encounter 40db80b9-a4ac-3fa9-bbfc-4c39efab5dd7?",
+    "sql": "SELECT reasondescription FROM encounters WHERE id='40db80b9-a4ac-3fa9-bbfc-4c39efab5dd7';",
+    "class": "encounters"
+  },
+  {
+    "question": "What is the SNOMED code of the encounter 99436597-c0a3-5eb6-fa3f-8b8ebbe31965?",
+    "sql": "SELECT code FROM encounters WHERE id='99436597-c0a3-5eb6-fa3f-8b8ebbe31965';",
+    "class": "encounters"
+  },
+  {
+    "question": "Please provide me the SOP code of the imaging study with the ID 6bb2a2a2-3b76-b3e8-8caf-a6e7dc25b65f.",
+    "sql": "SELECT sop_code FROM imaging_studies WHERE id='6bb2a2a2-3b76-b3e8-8caf-a6e7dc25b65f';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Please provide me the modality code of the imaging study with the ID 71ee50dd-ea7c-3415-e8d9-8b3a950cf731.",
+    "sql": "SELECT modality_code FROM imaging_studies WHERE id='71ee50dd-ea7c-3415-e8d9-8b3a950cf731';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "In which encounter was the imaging study with the series UID 1.2.840.99999999.1.66627973.1670006506026 conducted?",
+    "sql": "SELECT e.description FROM imaging_studies ims LEFT JOIN encounters e ON ims.encounter=e.id  WHERE ims.series_uid='1.2.840.99999999.1.66627973.1670006506026';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "What is the SOP code for the imaging study with series UID 1.2.840.99999999.1.80676027.1674381637924?",
+    "sql": "SELECT sop_code FROM imaging_studies WHERE series_uid='1.2.840.99999999.1.80676027.1674381637924';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Please provide me the SOP code and description of the imaging study with the ID fcbd803f-8ac1-a6fb-1ea8-aa71925db967.",
+    "sql": "SELECT sop_code, sop_description FROM imaging_studies WHERE id='fcbd803f-8ac1-a6fb-1ea8-aa71925db967';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Please provide me the encounters that are related to the imaging study with series UID 1.2.840.99999999.1.54234840.1401262469924.",
+    "sql": "SELECT e.description FROM imaging_studies ims LEFT JOIN encounters e ON ims.encounter=e.id  WHERE ims.series_uid='1.2.840.99999999.1.54234840.1401262469924';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Who is the patient associated with the imaging study with the ID 3420988a-ff8f-5132-5f1c-eb4289f0503f?",
+    "sql": "SELECT p.first, p.last FROM imaging_studies ims LEFT JOIN patients p ON ims.patient = p.id WHERE ims.id='3420988a-ff8f-5132-5f1c-eb4289f0503f';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Please provide me the body site description of the imaging study with the ID 96ffb550-2b81-cc38-9866-565b1bd73135.",
+    "sql": "SELECT bodysite_description FROM imaging_studies WHERE id='96ffb550-2b81-cc38-9866-565b1bd73135';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Please provide me the patient associated with the imaging study entailing series UID 1.2.840.99999999.1.80676027.1674381637924.",
+    "sql": "SELECT p.first, p.last FROM imaging_studies ims LEFT JOIN patients p ON ims.patient = p.id WHERE ims.series_uid='1.2.840.99999999.1.80676027.1674381637924';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Provide me the modality description related to the imaging study with series UID 1.2.840.99999999.1.86534332.1480148928924.",
+    "sql": "SELECT modality_description FROM imaging_studies WHERE series_uid='1.2.840.99999999.1.86534332.1480148928924';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "What is the modality code for the imaging study with series UID 1.2.840.99999999.1.20409606.1674515871722?",
+    "sql": "SELECT modality_code FROM imaging_studies WHERE series_uid='1.2.840.99999999.1.20409606.1674515871722';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Please provide me the body site code and description of the imaging study with the ID bad79488-4923-95f1-e4fb-74d98760947d.",
+    "sql": "SELECT bodysite_code, bodysite_description FROM imaging_studies WHERE id='bad79488-4923-95f1-e4fb-74d98760947d';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Provide me the modality description related to the imaging study with series UID 1.2.840.99999999.1.28843673.1683751543276.",
+    "sql": "SELECT modality_description FROM imaging_studies WHERE series_uid='1.2.840.99999999.1.28843673.1683751543276';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "What is the modality description of the imaging study with the ID 71ee50dd-ea7c-3415-e8d9-8b3a950cf731?",
+    "sql": "SELECT modality_description FROM imaging_studies WHERE id='71ee50dd-ea7c-3415-e8d9-8b3a950cf731';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Which patient ID is associated with the imaging study with the ID 3420988a-ff8f-5132-5f1c-eb4289f0503f?",
+    "sql": "SELECT patient FROM imaging_studies WHERE id='3420988a-ff8f-5132-5f1c-eb4289f0503f';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "What is the body site code for the imaging study with series UID 1.2.840.99999999.1.92475232.548031018625?",
+    "sql": "SELECT bodysite_code FROM imaging_studies WHERE series_uid='1.2.840.99999999.1.92475232.548031018625';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Please provide me the modality description of the imaging study with the ID 54bd1183-378b-ae53-fe54-65c324c700d6.",
+    "sql": "SELECT modality_description FROM imaging_studies WHERE id='54bd1183-378b-ae53-fe54-65c324c700d6';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "What is the body site code and description of the imaging study with the ID 3420988a-ff8f-5132-5f1c-eb4289f0503f?",
+    "sql": "SELECT bodysite_code,bodysite_description FROM imaging_studies WHERE id='3420988a-ff8f-5132-5f1c-eb4289f0503f';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "What is the SOP description for the imaging study with series UID 1.2.840.99999999.1.57895833.1595237299924?",
+    "sql": "SELECT sop_description FROM imaging_studies WHERE series_uid='1.2.840.99999999.1.57895833.1595237299924';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Please provide me the SOP description of the imaging study with the ID cd9756b6-e711-6795-5ed7-797c5535c1f7.",
+    "sql": "SELECT sop_description FROM imaging_studies WHERE id='cd9756b6-e711-6795-5ed7-797c5535c1f7';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "In which encounter was the imaging study with the series UID 1.2.840.99999999.1.88795374.911785112882 conducted?",
+    "sql": "SELECT e.description FROM imaging_studies ims LEFT JOIN encounters e ON ims.encounter=e.id  WHERE ims.series_uid='1.2.840.99999999.1.88795374.911785112882';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "What is the body site code and description of the imaging study with the ID fcfb6b6f-4e61-9c7b-0055-6fd47a81e5fd?",
+    "sql": "SELECT bodysite_code,bodysite_description FROM imaging_studies WHERE id='fcfb6b6f-4e61-9c7b-0055-6fd47a81e5fd';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Please provide me the series UID of the imaging study with the ID 81ddead3-b4d1-bef4-3ffb-608dabf1ce29.",
+    "sql": "SELECT series_uid FROM imaging_studies WHERE id='81ddead3-b4d1-bef4-3ffb-608dabf1ce29';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Please provide me the series UID of the imaging study with the ID 2353ce88-d0f6-52c4-84ca-d0133a951597.",
+    "sql": "SELECT series_uid FROM imaging_studies WHERE id='2353ce88-d0f6-52c4-84ca-d0133a951597';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Please provide me the body site code of the imaging study with the ID 735d7737-73ec-cbf9-ffef-9ef76bb31173.",
+    "sql": "SELECT bodysite_code FROM imaging_studies WHERE id='735d7737-73ec-cbf9-ffef-9ef76bb31173';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Please provide me the patient ID associated with the imaging study with the ID 3bf44625-64a5-d5b7-fa29-8adf53d671b2.",
+    "sql": "SELECT patient FROM imaging_studies WHERE id='3bf44625-64a5-d5b7-fa29-8adf53d671b2';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Please provide me the patient associated with the imaging study entailing series UID 1.2.840.99999999.1.21174883.1522054327924.",
+    "sql": "SELECT p.first, p.last FROM imaging_studies ims LEFT JOIN patients p ON ims.patient = p.id WHERE ims.series_uid='1.2.840.99999999.1.21174883.1522054327924';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Please provide me the SOP description of the imaging study with the ID ca21a429-bec9-35a5-17ba-0d012491d4c4.",
+    "sql": "SELECT sop_description FROM imaging_studies WHERE id='ca21a429-bec9-35a5-17ba-0d012491d4c4';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "What is the SOP code of the imaging study with the ID 820778b8-5a19-9acf-9dbd-a3be1a1b4a47?",
+    "sql": "SELECT sop_code FROM imaging_studies WHERE id='820778b8-5a19-9acf-9dbd-a3be1a1b4a47';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Who is the patient associated with the imaging study with series UID 1.2.840.99999999.1.97267088.1424332927924?",
+    "sql": "SELECT p.first, p.last FROM imaging_studies ims LEFT JOIN patients p ON ims.patient = p.id WHERE ims.series_uid='1.2.840.99999999.1.97267088.1424332927924';",
+    "class": "imaging_studies"
+  },
+  {
+    "question": "Please provide me the patients who have received the immunization with code 121.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM immunizations im LEFT JOIN patients p ON im.patient=p.id WHERE im.code='121';",
+    "class": "immunizations"
+  },
+  {
+    "question": "What is the date of the immunization with code 140?",
+    "sql": "SELECT date FROM immunizations WHERE code='140';",
+    "class": "immunizations"
+  },
+  {
+    "question": "What is the date of the immunization Influenza  seasonal  injectable  preservative free?",
+    "sql": "SELECT date FROM immunizations WHERE description='Influenza  seasonal  injectable  preservative free';",
+    "class": "immunizations"
+  },
+  {
+    "question": "What is the date of the immunization Influenza  seasonal  injectable  preservative free?",
+    "sql": "SELECT date FROM immunizations WHERE description='Influenza  seasonal  injectable  preservative free';",
+    "class": "immunizations"
+  },
+  {
+    "question": "Give me the encounters that are related to the immunization SARS-COV-2 (COVID-19) vaccine  mRNA  spike protein  LNP  preservative free  30 mcg/0.3mL dose.",
+    "sql": "SELECT DISTINCT e.description FROM immunizations im LEFT JOIN encounters e ON im.encounter=e.id WHERE im.description='SARS-COV-2 (COVID-19) vaccine  mRNA  spike protein  LNP  preservative free  30 mcg/0.3mL dose';",
+    "class": "immunizations"
+  },
+  {
+    "question": "Give me the base cost of the immunization Influenza  seasonal  injectable  preservative free.",
+    "sql": "SELECT DISTINCT base_cost FROM immunizations WHERE description='Influenza  seasonal  injectable  preservative free';",
+    "class": "immunizations"
+  },
+  {
+    "question": "What is the encounter associated with the immunization Influenza  seasonal  injectable  preservative free?",
+    "sql": "SELECT DISTINCT e.description FROM immunizations im LEFT JOIN encounters e ON im.encounter=e.id WHERE im.description='Influenza  seasonal  injectable  preservative free';",
+    "class": "immunizations"
+  },
+  {
+    "question": "Give me the patients who have received the immunization Influenza  seasonal  injectable  preservative free.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM immunizations im LEFT JOIN patients p ON im.patient=p.id WHERE im.description='Influenza  seasonal  injectable  preservative free';",
+    "class": "immunizations"
+  },
+  {
+    "question": "What is the cost of the immunization Influenza  seasonal  injectable  preservative free?",
+    "sql": "SELECT DISTINCT base_cost FROM immunizations WHERE description='Influenza  seasonal  injectable  preservative free';",
+    "class": "immunizations"
+  },
+  {
+    "question": "Please provide me the encounters that are related to the immunization with code 140.",
+    "sql": "SELECT DISTINCT e.description FROM immunizations im LEFT JOIN encounters e ON im.encounter=e.id WHERE im.code='140';",
+    "class": "immunizations"
+  },
+  {
+    "question": "Please provide me the patients who have received the immunization with code 140.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM immunizations im LEFT JOIN patients p ON im.patient=p.id WHERE im.code='140';",
+    "class": "immunizations"
+  },
+  {
+    "question": "What is the base cost of the immunization with code 49?",
+    "sql": "SELECT DISTINCT base_cost FROM immunizations WHERE code='49';",
+    "class": "immunizations"
+  },
+  {
+    "question": "What is the date of the immunization Influenza  seasonal  injectable  preservative free?",
+    "sql": "SELECT date FROM immunizations WHERE description='Influenza  seasonal  injectable  preservative free';",
+    "class": "immunizations"
+  },
+  {
+    "question": "Who has received the immunization Influenza  seasonal  injectable  preservative free?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM immunizations im LEFT JOIN patients p ON im.patient=p.id WHERE im.description='Influenza  seasonal  injectable  preservative free';",
+    "class": "immunizations"
+  },
+  {
+    "question": "What is the base cost of the immunization with code 20?",
+    "sql": "SELECT DISTINCT base_cost FROM immunizations WHERE code='20';",
+    "class": "immunizations"
+  },
+  {
+    "question": "Who has received the immunization Influenza  seasonal  injectable  preservative free?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM immunizations im LEFT JOIN patients p ON im.patient=p.id WHERE im.description='Influenza  seasonal  injectable  preservative free';",
+    "class": "immunizations"
+  },
+  {
+    "question": "Give me the patients who have received the immunization Influenza  seasonal  injectable  preservative free.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM immunizations im LEFT JOIN patients p ON im.patient=p.id WHERE im.description='Influenza  seasonal  injectable  preservative free';",
+    "class": "immunizations"
+  },
+  {
+    "question": "Please provide me the encounters that are related to the immunization with code 133.",
+    "sql": "SELECT DISTINCT e.description FROM immunizations im LEFT JOIN encounters e ON im.encounter=e.id WHERE im.code='133';",
+    "class": "immunizations"
+  },
+  {
+    "question": "Who has received the immunization with code 33?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM immunizations im LEFT JOIN patients p ON im.patient=p.id WHERE im.code='33';",
+    "class": "immunizations"
+  },
+  {
+    "question": "What is the encounter associated with the immunization Influenza  seasonal  injectable  preservative free?",
+    "sql": "SELECT DISTINCT e.description FROM immunizations im LEFT JOIN encounters e ON im.encounter=e.id WHERE im.description='Influenza  seasonal  injectable  preservative free';",
+    "class": "immunizations"
+  },
+  {
+    "question": "Give me the base cost of the immunization Influenza  seasonal  injectable  preservative free.",
+    "sql": "SELECT DISTINCT base_cost FROM immunizations WHERE description='Influenza  seasonal  injectable  preservative free';",
+    "class": "immunizations"
+  },
+  {
+    "question": "What is the encounter associated with the immunization Hep B  adolescent or pediatric?",
+    "sql": "SELECT DISTINCT e.description FROM immunizations im LEFT JOIN encounters e ON im.encounter=e.id WHERE im.description='Hep B  adolescent or pediatric';",
+    "class": "immunizations"
+  },
+  {
+    "question": "What is the encounter associated with the immunization with code 140?",
+    "sql": "SELECT DISTINCT e.description FROM immunizations im LEFT JOIN encounters e ON im.encounter=e.id WHERE im.code='140';",
+    "class": "immunizations"
+  },
+  {
+    "question": "What is the base cost of the immunization with code 121?",
+    "sql": "SELECT DISTINCT base_cost FROM immunizations WHERE code='121';",
+    "class": "immunizations"
+  },
+  {
+    "question": "What is the description of the immunization with code 114?",
+    "sql": "SELECT DISTINCT description FROM immunizations WHERE code='114';",
+    "class": "immunizations"
+  },
+  {
+    "question": "What is the encounter associated with the immunization with code 140?",
+    "sql": "SELECT DISTINCT e.description FROM immunizations im LEFT JOIN encounters e ON im.encounter=e.id WHERE im.code='140';",
+    "class": "immunizations"
+  },
+  {
+    "question": "What is the encounter associated with the immunization with code 133?",
+    "sql": "SELECT DISTINCT e.description FROM immunizations im LEFT JOIN encounters e ON im.encounter=e.id WHERE im.code='133';",
+    "class": "immunizations"
+  },
+  {
+    "question": "Please provide me the patients who have received the immunization with code 208.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM immunizations im LEFT JOIN patients p ON im.patient=p.id WHERE im.code='208';",
+    "class": "immunizations"
+  },
+  {
+    "question": "Who has received the immunization Hep B  adolescent or pediatric?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM immunizations im LEFT JOIN patients p ON im.patient=p.id WHERE im.description='Hep B  adolescent or pediatric';",
+    "class": "immunizations"
+  },
+  {
+    "question": "What is the cost of the immunization Influenza  seasonal  injectable  preservative free?",
+    "sql": "SELECT DISTINCT base_cost FROM immunizations WHERE description='Influenza  seasonal  injectable  preservative free';",
+    "class": "immunizations"
+  },
+  {
+    "question": "Please provide me the encounters that are related to the medication with the code 308136.",
+    "sql": "SELECT DISTINCT e.description FROM medications md LEFT JOIN encounters e ON md.encounter=e.id  WHERE md.code='308136';",
+    "class": "medications"
+  },
+  {
+    "question": "Please provide me the encounters that are related to the medication with the code 314231.",
+    "sql": "SELECT DISTINCT e.description FROM medications md LEFT JOIN encounters e ON md.encounter=e.id  WHERE md.code='314231';",
+    "class": "medications"
+  },
+  {
+    "question": "Please provide me the patients who are taking the medication Digoxin 0.125 MG Oral Tablet.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM medications md LEFT JOIN patients p ON md.patient=p.id  WHERE md.description='Digoxin 0.125 MG Oral Tablet';",
+    "class": "medications"
+  },
+  {
+    "question": "What is the start date of medication with the code 904419?",
+    "sql": "SELECT start FROM medications WHERE code='904419';",
+    "class": "medications"
+  },
+  {
+    "question": "Please provide me the encounters that are related to the medication with the code 1049504.",
+    "sql": "SELECT DISTINCT e.description FROM medications md LEFT JOIN encounters e ON md.encounter=e.id  WHERE md.code='1049504';",
+    "class": "medications"
+  },
+  {
+    "question": "In which encounter is the medication with the code 748879 administered?",
+    "sql": "SELECT DISTINCT e.description FROM medications md LEFT JOIN encounters e ON md.encounter=e.id  WHERE md.code='748879';",
+    "class": "medications"
+  },
+  {
+    "question": "Please provide me the encounters that are related to the medication with the code 310798.",
+    "sql": "SELECT DISTINCT e.description FROM medications md LEFT JOIN encounters e ON md.encounter=e.id  WHERE md.code='310798';",
+    "class": "medications"
+  },
+  {
+    "question": "For which patient was the medication with the code 310798 prescribed?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM medications md LEFT JOIN patients p ON md.patient=p.id  WHERE md.code='310798';",
+    "class": "medications"
+  },
+  {
+    "question": "Please provide me the cost of the medication with the code 897685.",
+    "sql": "SELECT DISTINCT base_cost FROM medications WHERE code='897685';",
+    "class": "medications"
+  },
+  {
+    "question": "Please provide me the encounters that are related to the medication with the code 310798.",
+    "sql": "SELECT DISTINCT e.description FROM medications md LEFT JOIN encounters e ON md.encounter=e.id  WHERE md.code='310798';",
+    "class": "medications"
+  },
+  {
+    "question": "What is the base cost of the medication with the code 748879?",
+    "sql": "SELECT DISTINCT base_cost FROM medications WHERE code='748879';",
+    "class": "medications"
+  },
+  {
+    "question": "Which patients were prescribed the medication Digoxin 0.125 MG Oral Tablet?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM medications md LEFT JOIN patients p ON md.patient=p.id  WHERE md.description='Digoxin 0.125 MG Oral Tablet';",
+    "class": "medications"
+  },
+  {
+    "question": "What is the base cost of medication Acetaminophen 325 MG Oral Tablet [Tylenol]?",
+    "sql": "SELECT DISTINCT base_cost FROM medications WHERE description='Acetaminophen 325 MG Oral Tablet [Tylenol]';",
+    "class": "medications"
+  },
+  {
+    "question": "Please provide me the patients who are taking the medication lisinopril 10 MG Oral Tablet.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM medications md LEFT JOIN patients p ON md.patient=p.id  WHERE md.description='lisinopril 10 MG Oral Tablet';",
+    "class": "medications"
+  },
+  {
+    "question": "Please provide me the patients prescribed the medication with the code 197604.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM medications md LEFT JOIN patients p ON md.patient=p.id  WHERE md.code='197604';",
+    "class": "medications"
+  },
+  {
+    "question": "In which encounter is the medication with the code 856987 administered?",
+    "sql": "SELECT DISTINCT e.description FROM medications md LEFT JOIN encounters e ON md.encounter=e.id  WHERE md.code='856987';",
+    "class": "medications"
+  },
+  {
+    "question": "Which payer paid for the medication Alendronic acid 10 MG Oral Tablet?",
+    "sql": "SELECT DISTINCT py.name FROM medications med LEFT JOIN payers py ON med.payer=py.id WHERE med.description='Alendronic acid 10 MG Oral Tablet';",
+    "class": "medications"
+  },
+  {
+    "question": "Which patients were prescribed the medication Simvastatin 10 MG Oral Tablet?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM medications md LEFT JOIN patients p ON md.patient=p.id  WHERE md.description='Simvastatin 10 MG Oral Tablet';",
+    "class": "medications"
+  },
+  {
+    "question": "In which encounter was the medication Acetaminophen 300 MG / Hydrocodone Bitartrate 5 MG Oral Tablet administered?",
+    "sql": "SELECT DISTINCT e.description FROM medications md LEFT JOIN encounters e ON md.encounter=e.id  WHERE md.description='Acetaminophen 300 MG / Hydrocodone Bitartrate 5 MG Oral Tablet';",
+    "class": "medications"
+  },
+  {
+    "question": "What is the total cost of the medication with the code 835603?",
+    "sql": "SELECT DISTINCT totalcost FROM medications WHERE code='835603';",
+    "class": "medications"
+  },
+  {
+    "question": "Please provide me the cost of the medication with the code 308136.",
+    "sql": "SELECT DISTINCT base_cost FROM medications WHERE code='308136';",
+    "class": "medications"
+  },
+  {
+    "question": "Please provide me the patients who are taking the medication amLODIPine 2.5 MG Oral Tablet.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM medications md LEFT JOIN patients p ON md.patient=p.id  WHERE md.description='amLODIPine 2.5 MG Oral Tablet';",
+    "class": "medications"
+  },
+  {
+    "question": "Please provide me the cost of the medication Digoxin 0.125 MG Oral Tablet.",
+    "sql": "SELECT DISTINCT base_cost FROM medications WHERE description='Digoxin 0.125 MG Oral Tablet';",
+    "class": "medications"
+  },
+  {
+    "question": "Which payer paid for the medication lisinopril 10 MG Oral Tablet?",
+    "sql": "SELECT DISTINCT py.name FROM medications med LEFT JOIN payers py ON med.payer=py.id WHERE med.description='lisinopril 10 MG Oral Tablet';",
+    "class": "medications"
+  },
+  {
+    "question": "What is the first date of use of the medication Abuse-Deterrent 12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet [Oxycontin]?",
+    "sql": "SELECT MIN(start) AS earliest_start FROM medications WHERE description='Abuse-Deterrent 12 HR Oxycodone Hydrochloride 10 MG Extended Release Oral Tablet [Oxycontin]';",
+    "class": "medications"
+  },
+  {
+    "question": "What is the base cost of medication verapamil hydrochloride 80 MG Oral Tablet?",
+    "sql": "SELECT DISTINCT base_cost FROM medications WHERE description='verapamil hydrochloride 80 MG Oral Tablet';",
+    "class": "medications"
+  },
+  {
+    "question": "In which encounter was the medication Warfarin Sodium 5 MG Oral Tablet administered?",
+    "sql": "SELECT DISTINCT e.description FROM medications md LEFT JOIN encounters e ON md.encounter=e.id  WHERE md.description='Warfarin Sodium 5 MG Oral Tablet';",
+    "class": "medications"
+  },
+  {
+    "question": "Please provide me the patients who are taking the medication Alendronic acid 10 MG Oral Tablet.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM medications md LEFT JOIN patients p ON md.patient=p.id  WHERE md.description='Alendronic acid 10 MG Oral Tablet';",
+    "class": "medications"
+  },
+  {
+    "question": "For which patient was the medication with the code 835603 prescribed?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM medications md LEFT JOIN patients p ON md.patient=p.id  WHERE md.code='835603';",
+    "class": "medications"
+  },
+  {
+    "question": "What is the base cost of the medication with the code 245134?",
+    "sql": "SELECT DISTINCT base_cost FROM medications WHERE code='245134';",
+    "class": "medications"
+  },
+  {
+    "question": "Can you tell me when the observation with the code 39156-5 was recorded?",
+    "sql": "SELECT date FROM observations WHERE code='39156-5';",
+    "class": "observations"
+  },
+  {
+    "question": "Please provide me the encounters which are related to the observation Preferred language.",
+    "sql": "SELECT DISTINCT e.description FROM observations ob LEFT JOIN encounters e ON ob.encounter=e.id WHERE ob.description='Preferred language';",
+    "class": "observations"
+  },
+  {
+    "question": "Please provide me the type of an observation with the code 786-4.",
+    "sql": "SELECT DISTINCT type FROM observations WHERE code='786-4';",
+    "class": "observations"
+  },
+  {
+    "question": "Can you tell me when the observation with the code 32207-3 was recorded?",
+    "sql": "SELECT date FROM observations WHERE code='32207-3';",
+    "class": "observations"
+  },
+  {
+    "question": "Which patients have the observation Body mass index (BMI) [Ratio]?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM observations ob LEFT JOIN patients p ON ob.patient=p.id WHERE ob.description='Body mass index (BMI) [Ratio]';",
+    "class": "observations"
+  },
+  {
+    "question": "Please provide me the type of an observation with the code 54899-0.",
+    "sql": "SELECT DISTINCT type FROM observations WHERE code='54899-0';",
+    "class": "observations"
+  },
+  {
+    "question": "Which patients have the observation with the code 93028-9?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM observations ob LEFT JOIN patients p ON ob.patient=p.id WHERE ob.code='93028-9';",
+    "class": "observations"
+  },
+  {
+    "question": "Please provide me the encounters which are related to the observation Tobacco smoking status.",
+    "sql": "SELECT DISTINCT e.description FROM observations ob LEFT JOIN encounters e ON ob.encounter=e.id WHERE ob.description='Tobacco smoking status';",
+    "class": "observations"
+  },
+  {
+    "question": "What type of observation is Respiratory rate?",
+    "sql": "SELECT DISTINCT type FROM observations WHERE description='Respiratory rate';",
+    "class": "observations"
+  },
+  {
+    "question": "What type of observation is DALY?",
+    "sql": "SELECT DISTINCT type FROM observations WHERE description='DALY';",
+    "class": "observations"
+  },
+  {
+    "question": "What value does observation Respiratory rate have?",
+    "sql": "SELECT DISTINCT value FROM observations WHERE description='Respiratory rate';",
+    "class": "observations"
+  },
+  {
+    "question": "What is the value of the observation with the code 8480-6?",
+    "sql": "SELECT DISTINCT type FROM observations WHERE code='8480-6';",
+    "class": "observations"
+  },
+  {
+    "question": "Which patients have the observation Respiratory rate?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM observations ob LEFT JOIN patients p ON ob.patient=p.id WHERE ob.description='Respiratory rate';",
+    "class": "observations"
+  },
+  {
+    "question": "Can you tell me when the observation with the code 21000-5 was recorded?",
+    "sql": "SELECT date FROM observations WHERE code='21000-5';",
+    "class": "observations"
+  },
+  {
+    "question": "What code does observation Systolic Blood Pressure have?",
+    "sql": "SELECT DISTINCT code FROM observations WHERE description='Systolic Blood Pressure';",
+    "class": "observations"
+  },
+  {
+    "question": "What is the type of the observation with the code 718-7?",
+    "sql": "SELECT DISTINCT type FROM observations WHERE code='718-7';",
+    "class": "observations"
+  },
+  {
+    "question": "Can you tell me when the observation Body mass index (BMI) [Ratio] was recorded?",
+    "sql": "SELECT date FROM observations WHERE description='Body mass index (BMI) [Ratio]';",
+    "class": "observations"
+  },
+  {
+    "question": "Please provide me patients with the observation DALY.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM observations ob LEFT JOIN patients p ON ob.patient=p.id WHERE ob.description='DALY';",
+    "class": "observations"
+  },
+  {
+    "question": "What encounter is associated with the observation DALY?",
+    "sql": "SELECT DISTINCT e.description FROM observations ob LEFT JOIN encounters e ON ob.encounter=e.id WHERE ob.description='DALY';",
+    "class": "observations"
+  },
+  {
+    "question": "What encounter is associated with the observation with the code 63512-8?",
+    "sql": "SELECT DISTINCT e.description FROM observations ob LEFT JOIN encounters e ON ob.encounter=e.id WHERE ob.code='63512-8';",
+    "class": "observations"
+  },
+  {
+    "question": "What encounter is associated with the observation with the code QALY?",
+    "sql": "SELECT DISTINCT e.description FROM observations ob LEFT JOIN encounters e ON ob.encounter=e.id WHERE ob.code='QALY';",
+    "class": "observations"
+  },
+  {
+    "question": "What code does observation Within the last year  have you been afraid of your partner or ex-partner? have?",
+    "sql": "SELECT DISTINCT code FROM observations WHERE description='Within the last year  have you been afraid of your partner or ex-partner?';",
+    "class": "observations"
+  },
+  {
+    "question": "What encounter is associated with the observation with the code 76437-3?",
+    "sql": "SELECT DISTINCT e.description FROM observations ob LEFT JOIN encounters e ON ob.encounter=e.id WHERE ob.code='76437-3';",
+    "class": "observations"
+  },
+  {
+    "question": "Please provide me the patient with the observation entailing the code QOLS.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM observations ob LEFT JOIN patients p ON ob.patient=p.id WHERE ob.code='QOLS';",
+    "class": "observations"
+  },
+  {
+    "question": "Please provide me patients with the observation In the past year  have you spent more than 2 nights in a row in a jail  prison  detention center  or juvenile correctional facility?.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM observations ob LEFT JOIN patients p ON ob.patient=p.id WHERE ob.description='In the past year  have you spent more than 2 nights in a row in a jail  prison  detention center  or juvenile correctional facility?';",
+    "class": "observations"
+  },
+  {
+    "question": "Please provide me patients with the observation Respiratory rate.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM observations ob LEFT JOIN patients p ON ob.patient=p.id WHERE ob.description='Respiratory rate';",
+    "class": "observations"
+  },
+  {
+    "question": "Which patients have the observation with the code 786-4?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM observations ob LEFT JOIN patients p ON ob.patient=p.id WHERE ob.code='786-4';",
+    "class": "observations"
+  },
+  {
+    "question": "What is the description of the observation with the code 8302-2?",
+    "sql": "SELECT DISTINCT description FROM observations WHERE code='8302-2';",
+    "class": "observations"
+  },
+  {
+    "question": "Please provide me the patient with the observation entailing the code 789-8.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM observations ob LEFT JOIN patients p ON ob.patient=p.id WHERE ob.code='789-8';",
+    "class": "observations"
+  },
+  {
+    "question": "When was the observation with the code 32624-9 recorded?",
+    "sql": "SELECT date FROM observations WHERE code='32624-9';",
+    "class": "observations"
+  },
+  {
+    "question": "What encounter is associated with the organization with the ID ce53c877-0290-390a-b4b4-2462001a1713?",
+    "sql": "SELECT DISTINCT e.description FROM organizations org LEFT JOIN encounters e ON e.organization=org.id WHERE org.id='ce53c877-0290-390a-b4b4-2462001a1713';",
+    "class": "organizations"
+  },
+  {
+    "question": "What is the address of the organization with the ID 1bed5229-19d7-3168-94a2-f1f2abb00270?",
+    "sql": "SELECT address FROM organizations WHERE id='1bed5229-19d7-3168-94a2-f1f2abb00270';",
+    "class": "organizations"
+  },
+  {
+    "question": "Please provide me the description of the encounters that are linked with the organization with the ID 069b90f9-309b-35e4-b990-d1dbacb962cc.",
+    "sql": "SELECT DISTINCT e.description FROM organizations org LEFT JOIN encounters e ON e.organization=org.id WHERE org.id='069b90f9-309b-35e4-b990-d1dbacb962cc';",
+    "class": "organizations"
+  },
+  {
+    "question": "What encounter is associated with the organization STEWARD HOLY FAMILY HOSPITAL INC?",
+    "sql": "SELECT DISTINCT e.description FROM organizations org LEFT JOIN encounters e ON e.organization=org.id WHERE org.name='STEWARD HOLY FAMILY HOSPITAL INC';",
+    "class": "organizations"
+  },
+  {
+    "question": "What is the address of the organization CHARLES RIVER COMMUNITY HEALTH  INC?",
+    "sql": "SELECT address FROM organizations WHERE name='CHARLES RIVER COMMUNITY HEALTH  INC';",
+    "class": "organizations"
+  },
+  {
+    "question": "What city is the organization with the ID 0fab3c4e-a028-39a6-b15a-be5a88b6aa2a located in?",
+    "sql": "SELECT city FROM organizations WHERE id='0fab3c4e-a028-39a6-b15a-be5a88b6aa2a';",
+    "class": "organizations"
+  },
+  {
+    "question": "Please provide me the description of the encounters that are linked with the organization with the ID 63b93742-6c13-3309-92b6-f7c858e9f320.",
+    "sql": "SELECT DISTINCT e.description FROM organizations org LEFT JOIN encounters e ON e.organization=org.id WHERE org.id='63b93742-6c13-3309-92b6-f7c858e9f320';",
+    "class": "organizations"
+  },
+  {
+    "question": "Who is associated with the organization with the ID 4f5e8f16-a31b-3071-8556-d7188ede313d?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM organizations org LEFT JOIN encounters e ON org.id=e.organization JOIN patients p ON e.patient=p.id WHERE org.id='4f5e8f16-a31b-3071-8556-d7188ede313d';",
+    "class": "organizations"
+  },
+  {
+    "question": "Please provide me the description of the encounters that are linked with the organization with the ID 11ba6a26-59b4-3728-a268-6dc9929962b4.",
+    "sql": "SELECT DISTINCT e.description FROM organizations org LEFT JOIN encounters e ON e.organization=org.id WHERE org.id='11ba6a26-59b4-3728-a268-6dc9929962b4';",
+    "class": "organizations"
+  },
+  {
+    "question": "What is the name of the organization with the ID aade280a-3b90-3e48-9648-91109a964a63?",
+    "sql": "SELECT name FROM organizations WHERE id='aade280a-3b90-3e48-9648-91109a964a63';",
+    "class": "organizations"
+  },
+  {
+    "question": "Please provide me the address of the organization BETH ISRAEL DEACONESS HOSPITAL PLYMOUTH INC.",
+    "sql": "SELECT address FROM organizations WHERE name='BETH ISRAEL DEACONESS HOSPITAL PLYMOUTH INC';",
+    "class": "organizations"
+  },
+  {
+    "question": "What is the address of the organization with the ID d5920b72-ac1a-3ec4-81ca-e3b75cb7aadd?",
+    "sql": "SELECT address FROM organizations WHERE id='d5920b72-ac1a-3ec4-81ca-e3b75cb7aadd';",
+    "class": "organizations"
+  },
+  {
+    "question": "Please provide description of the encounters that are linked with the organization TRANQUILITY HEALTH AND WELLNESS PROFESSIONALS LLC.",
+    "sql": "SELECT DISTINCT e.description FROM organizations org LEFT JOIN encounters e ON e.organization=org.id WHERE org.name='TRANQUILITY HEALTH AND WELLNESS PROFESSIONALS LLC';",
+    "class": "organizations"
+  },
+  {
+    "question": "What is the address of the organization SPECTRUM HOME HEALTH AND HOSPICE CARE?",
+    "sql": "SELECT address FROM organizations WHERE name='SPECTRUM HOME HEALTH AND HOSPICE CARE';",
+    "class": "organizations"
+  },
+  {
+    "question": "Please provide me the description of the encounters that are linked with the organization with the ID a2cc09de-c1e2-3126-8c09-d49f95225281.",
+    "sql": "SELECT DISTINCT e.description FROM organizations org LEFT JOIN encounters e ON e.organization=org.id WHERE org.id='a2cc09de-c1e2-3126-8c09-d49f95225281';",
+    "class": "organizations"
+  },
+  {
+    "question": "What is the address of the organization with the ID ce3b504c-f15c-3bcf-ba6e-dcb551cc7d7f?",
+    "sql": "SELECT address FROM organizations WHERE id='ce3b504c-f15c-3bcf-ba6e-dcb551cc7d7f';",
+    "class": "organizations"
+  },
+  {
+    "question": "What is the address of the organization GARDEN STATE HEALTHCARE ASSOCIATES LLC?",
+    "sql": "SELECT address FROM organizations WHERE name='GARDEN STATE HEALTHCARE ASSOCIATES LLC';",
+    "class": "organizations"
+  },
+  {
+    "question": "Please provide me the description of the encounters that are linked with the organization with the ID 389323ef-b127-3a06-a22d-e24aef033e5d.",
+    "sql": "SELECT DISTINCT e.description FROM organizations org LEFT JOIN encounters e ON e.organization=org.id WHERE org.id='389323ef-b127-3a06-a22d-e24aef033e5d';",
+    "class": "organizations"
+  },
+  {
+    "question": "Please provide me the address of the organization EXCEL CENTER FOR NURSING AND REHAB AT LEXINGTON.",
+    "sql": "SELECT address FROM organizations WHERE name='EXCEL CENTER FOR NURSING AND REHAB AT LEXINGTON';",
+    "class": "organizations"
+  },
+  {
+    "question": "What is the name of the organization with the ID 36c8b677-a6ce-3266-b71e-ed86d778d0fa?",
+    "sql": "SELECT name FROM organizations WHERE id='36c8b677-a6ce-3266-b71e-ed86d778d0fa';",
+    "class": "organizations"
+  },
+  {
+    "question": "What is the address of the organization with the ID b9a91cbd-3263-31d9-9cff-55873cf8b2e2?",
+    "sql": "SELECT address FROM organizations WHERE id='b9a91cbd-3263-31d9-9cff-55873cf8b2e2';",
+    "class": "organizations"
+  },
+  {
+    "question": "What city is the organization NORTH SHORE MEDICAL CENTER INC located in?",
+    "sql": "SELECT city FROM organizations WHERE name='NORTH SHORE MEDICAL CENTER INC';",
+    "class": "organizations"
+  },
+  {
+    "question": "Please provide description of the encounters that are linked with the organization OAKDALE REHABILITATION & SKILLED NURSING CENTER.",
+    "sql": "SELECT DISTINCT e.description FROM organizations org LEFT JOIN encounters e ON e.organization=org.id WHERE org.name='OAKDALE REHABILITATION & SKILLED NURSING CENTER';",
+    "class": "organizations"
+  },
+  {
+    "question": "What is the address of the organization FRANCISCAN HOSPITAL FOR CHILDREN INC?",
+    "sql": "SELECT address FROM organizations WHERE name='FRANCISCAN HOSPITAL FOR CHILDREN INC';",
+    "class": "organizations"
+  },
+  {
+    "question": "Who is associated with the organization LEOMINSTER COMUNITY HEALTH CENTER?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM organizations org LEFT JOIN encounters e ON org.id=e.organization LEFT JOIN patients p ON e.patient=p.id WHERE org.name='LEOMINSTER COMUNITY HEALTH CENTER';",
+    "class": "organizations"
+  },
+  {
+    "question": "Please provide description of the encounters that are linked with the organization GENTIVA HEALTH SERVICES.",
+    "sql": "SELECT DISTINCT e.description FROM organizations org LEFT JOIN encounters e ON e.organization=org.id WHERE org.name='GENTIVA HEALTH SERVICES';",
+    "class": "organizations"
+  },
+  {
+    "question": "Please provide the names of the patients that are linked with the organization with the ID 5a6fa8a5-90e2-3f70-bb3e-3d9dd7ad2f96.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM organizations org LEFT JOIN encounters e ON org.id=e.organization JOIN patients p ON e.patient=p.id WHERE org.id='5a6fa8a5-90e2-3f70-bb3e-3d9dd7ad2f96';",
+    "class": "organizations"
+  },
+  {
+    "question": "What encounter is associated with the organization with the ID a25107f7-f4f5-36fc-98e4-f3e1b5875c91?",
+    "sql": "SELECT DISTINCT e.description FROM organizations org LEFT JOIN encounters e ON e.organization=org.id WHERE org.id='a25107f7-f4f5-36fc-98e4-f3e1b5875c91';",
+    "class": "organizations"
+  },
+  {
+    "question": "Who is associated with the organization with the ID 588f6ce6-b8db-3588-8189-29db2680a313?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM organizations org LEFT JOIN encounters e ON org.id=e.organization JOIN patients p ON e.patient=p.id WHERE org.id='588f6ce6-b8db-3588-8189-29db2680a313';",
+    "class": "organizations"
+  },
+  {
+    "question": "Please provide me the name of the organization with the ID 77d67d58-b097-3309-a94c-abd49c432528.",
+    "sql": "SELECT name FROM organizations WHERE id='77d67d58-b097-3309-a94c-abd49c432528';",
+    "class": "organizations"
+  },
+  {
+    "question": "Could you provide information about the ethnicity of the patient named Randell912 Corkery305?",
+    "sql": "SELECT ethnicity FROM  patients WHERE first='Randell912' AND last='Corkery305';",
+    "class": "patients"
+  },
+  {
+    "question": "Where was the patient with the ID 11dce467-4d60-4f24-94ef-6015bbd5c1be born?",
+    "sql": "SELECT birthplace FROM patients WHERE id ='11dce467-4d60-4f24-94ef-6015bbd5c1be';",
+    "class": "patients"
+  },
+  {
+    "question": "What is the income status of the patient named Alonso270 Kuvalis369?",
+    "sql": "SELECT income FROM patients WHERE first='Alonso270' AND last='Kuvalis369';",
+    "class": "patients"
+  },
+  {
+    "question": "What is the gender of the patient with the ID e2fccb1a-7609-c2e8-c0f3-213582c574d3?",
+    "sql": "SELECT gender FROM patients WHERE id ='e2fccb1a-7609-c2e8-c0f3-213582c574d3';",
+    "class": "patients"
+  },
+  {
+    "question": "Which procedure codes did the patient named Wilfred787 Schamberger479 undergo?",
+    "sql": "SELECT code FROM procedures pr LEFT JOIN patients p ON p.id = pr.patient WHERE p.first='Wilfred787' AND p.last='Schamberger479';",
+    "class": "patients"
+  },
+  {
+    "question": "What is the name of the patient with the ID 3a775361-5383-c3a4-ee82-bd3132f5a76c?",
+    "sql": "SELECT first,last FROM patients WHERE id ='3a775361-5383-c3a4-ee82-bd3132f5a76c';",
+    "class": "patients"
+  },
+  {
+    "question": "What is the county of residence of the patient named Korey682 Russel238?",
+    "sql": "SELECT county FROM patients WHERE first='Korey682' AND last='Russel238';",
+    "class": "patients"
+  },
+  {
+    "question": "Do you have the name of the patient corresponding to the ID e2c64082-3a56-8423-0ee7-27df5a118f88?",
+    "sql": "SELECT first,last FROM patients WHERE id ='e2c64082-3a56-8423-0ee7-27df5a118f88';",
+    "class": "patients"
+  },
+  {
+    "question": "When was the patient with the ID 0f782ffd-6189-6baf-325f-4913f8255570 born?",
+    "sql": "SELECT birthdate FROM patients WHERE id ='0f782ffd-6189-6baf-325f-4913f8255570';",
+    "class": "patients"
+  },
+  {
+    "question": "What is the address of the patient with the ID cd498dab-28c5-a255-8d25-b90ff447f802?",
+    "sql": "SELECT address FROM patients WHERE id ='cd498dab-28c5-a255-8d25-b90ff447f802';",
+    "class": "patients"
+  },
+  {
+    "question": "What is the city of residence of the patient named Gordon377 Schmitt836?",
+    "sql": "SELECT city FROM patients WHERE first='Gordon377' AND last='Schmitt836';",
+    "class": "patients"
+  },
+  {
+    "question": "What is the first name of the patient with the ID a3032999-6a03-9878-a8e7-928cb5bedf22?",
+    "sql": "SELECT first FROM patients WHERE id ='a3032999-6a03-9878-a8e7-928cb5bedf22';",
+    "class": "patients"
+  },
+  {
+    "question": "What is the income status of the patient with the ID d0425453-1be8-5cb5-47e2-4a73c90eac3c?",
+    "sql": "SELECT income FROM patients WHERE id ='d0425453-1be8-5cb5-47e2-4a73c90eac3c';",
+    "class": "patients"
+  },
+  {
+    "question": "Could you provide information about the gender of the patient named Miguel815 Ocampo729?",
+    "sql": "SELECT gender FROM  patients WHERE first='Miguel815' AND last='Ocampo729';",
+    "class": "patients"
+  },
+  {
+    "question": "What is the ethnicity of the patient named Mar\u00eda Jos\u00e9279 Jaramillo133?",
+    "sql": "SELECT ethnicity FROM patients WHERE first='Mar\u00eda Jos\u00e9279' AND last='Jaramillo133';",
+    "class": "patients"
+  },
+  {
+    "question": "Could you specify the address of the patient with the ID dff902c9-a4a9-8305-c090-26379e3d8921?",
+    "sql": "SELECT address FROM patients WHERE id ='dff902c9-a4a9-8305-c090-26379e3d8921';",
+    "class": "patients"
+  },
+  {
+    "question": "What is the birthplace of the patient named Jacquiline133 Hilll811?",
+    "sql": "SELECT birthplace FROM patients WHERE first='Jacquiline133' AND last='Hilll811';",
+    "class": "patients"
+  },
+  {
+    "question": "Could you specify the address of the patient with the ID 3b5bf2ed-3cde-03da-6d4c-da188e6272ee?",
+    "sql": "SELECT address FROM patients WHERE id ='3b5bf2ed-3cde-03da-6d4c-da188e6272ee';",
+    "class": "patients"
+  },
+  {
+    "question": "What is the county of residence of the patient with the ID 55deee32-40e1-7b5c-01f7-824b6882ad23?",
+    "sql": "SELECT county FROM patients WHERE id ='55deee32-40e1-7b5c-01f7-824b6882ad23';",
+    "class": "patients"
+  },
+  {
+    "question": "What is the ethnicity of the patient with the ID 62a22965-3ed6-7380-4c8e-02a19539738d?",
+    "sql": "SELECT ethnicity FROM patients WHERE id ='62a22965-3ed6-7380-4c8e-02a19539738d';",
+    "class": "patients"
+  },
+  {
+    "question": "What is the birthdate of the patient named Mariano761 Marvin195?",
+    "sql": "SELECT birthdate FROM patients WHERE first='Mariano761' AND last='Marvin195';",
+    "class": "patients"
+  },
+  {
+    "question": "What is the birthdate of the patient with the ID c8fd61ba-5e6e-9b87-278a-8f33bc8fb7e3?",
+    "sql": "SELECT birthdate FROM patients WHERE id ='c8fd61ba-5e6e-9b87-278a-8f33bc8fb7e3';",
+    "class": "patients"
+  },
+  {
+    "question": "Which ethnicity does the patient named Brock407 Hauck852 have?",
+    "sql": "SELECT ethnicity FROM patients WHERE first='Brock407' AND last='Hauck852';",
+    "class": "patients"
+  },
+  {
+    "question": "Can you tell me the gender of the patient whose ID matches 7dc6cb76-a1bf-ba42-3d54-5c907b14d93a?",
+    "sql": "SELECT gender FROM patients WHERE id ='7dc6cb76-a1bf-ba42-3d54-5c907b14d93a';",
+    "class": "patients"
+  },
+  {
+    "question": "What is the county of residence of the patient with the ID fefc40bd-8f61-5321-c5a3-f7fd9b165ef1?",
+    "sql": "SELECT county FROM patients WHERE id ='fefc40bd-8f61-5321-c5a3-f7fd9b165ef1';",
+    "class": "patients"
+  },
+  {
+    "question": "What is the health care coverage status of the patient with the ID b36fc517-682e-5378-3311-b4d80c3bbafc?",
+    "sql": "SELECT healthcare_coverage FROM patients WHERE id ='b36fc517-682e-5378-3311-b4d80c3bbafc';",
+    "class": "patients"
+  },
+  {
+    "question": "Where was the patient named Errol226 White193 born?",
+    "sql": "SELECT birthplace FROM patients WHERE first='Errol226' AND last='White193';",
+    "class": "patients"
+  },
+  {
+    "question": "What is the income status of the patient with the ID cc97e41c-5eaa-55fa-2907-93db2373be37?",
+    "sql": "SELECT income FROM patients WHERE id ='cc97e41c-5eaa-55fa-2907-93db2373be37';",
+    "class": "patients"
+  },
+  {
+    "question": "Where was the patient named Andrea7 Kunde533 born?",
+    "sql": "SELECT birthplace FROM patients WHERE first='Andrea7' AND last='Kunde533';",
+    "class": "patients"
+  },
+  {
+    "question": "Do you have the name of the patient corresponding to the ID cd2f5b22-9a6a-cda8-9d6f-1b01b7b7f50d?",
+    "sql": "SELECT first,last FROM patients WHERE id ='cd2f5b22-9a6a-cda8-9d6f-1b01b7b7f50d';",
+    "class": "patients"
+  },
+  {
+    "question": "Please provide me the number of encounters covered by the payer Cigna Health.",
+    "sql": "SELECT covered_encounters FROM payers WHERE name='Cigna Health';",
+    "class": "payers"
+  },
+  {
+    "question": "How many immunizations are uncovered by the payer with the ID 734afbd6-4794-363b-9bc0-6a3981533ed5?",
+    "sql": "SELECT uncovered_immunizations FROM payers WHERE id='734afbd6-4794-363b-9bc0-6a3981533ed5';",
+    "class": "payers"
+  },
+  {
+    "question": "What is the total number of member months of the payer UnitedHealthcare?",
+    "sql": "SELECT member_months FROM payers WHERE name='UnitedHealthcare';",
+    "class": "payers"
+  },
+  {
+    "question": "How many unique customers does the payer Cigna Health have?",
+    "sql": "SELECT unique_customers FROM payers WHERE name='Cigna Health';",
+    "class": "payers"
+  },
+  {
+    "question": "How many immunizations are uncovered by the payer with the ID 8fa6c185-e44e-3e34-8bd8-39be8694f4ce?",
+    "sql": "SELECT uncovered_immunizations FROM payers WHERE id='8fa6c185-e44e-3e34-8bd8-39be8694f4ce';",
+    "class": "payers"
+  },
+  {
+    "question": "How many encounters are covered by the payer with the ID a735bf55-83e9-331a-899d-a82a60b9f60c?",
+    "sql": "SELECT covered_encounters FROM payers WHERE id='a735bf55-83e9-331a-899d-a82a60b9f60c';",
+    "class": "payers"
+  },
+  {
+    "question": "How many immunizations are covered by the payer with the ID 26aab0cd-6aba-3e1b-ac5b-05c8867e762c?",
+    "sql": "SELECT covered_immunizations FROM payers WHERE id='26aab0cd-6aba-3e1b-ac5b-05c8867e762c';",
+    "class": "payers"
+  },
+  {
+    "question": "How many medications are uncovered by the payer with the ID 0133f751-9229-3cfd-815f-b6d4979bdd6a?",
+    "sql": "SELECT uncovered_medications FROM payers WHERE id='0133f751-9229-3cfd-815f-b6d4979bdd6a';",
+    "class": "payers"
+  },
+  {
+    "question": "How many procedures are uncovered by the payer with the ID 0133f751-9229-3cfd-815f-b6d4979bdd6a?",
+    "sql": "SELECT uncovered_procedures FROM payers WHERE id='0133f751-9229-3cfd-815f-b6d4979bdd6a';",
+    "class": "payers"
+  },
+  {
+    "question": "Please provide me the revenue of generated by the payer with the ID d18ef2e6-ef40-324c-be54-34a5ee865625.",
+    "sql": "SELECT revenue FROM payers WHERE id='d18ef2e6-ef40-324c-be54-34a5ee865625';",
+    "class": "payers"
+  },
+  {
+    "question": "How many unique customers does the payer UnitedHealthcare have?",
+    "sql": "SELECT unique_customers FROM payers WHERE name='UnitedHealthcare';",
+    "class": "payers"
+  },
+  {
+    "question": "Please provide me the number of immunizations covered by the payer with the ID a735bf55-83e9-331a-899d-a82a60b9f60c.",
+    "sql": "SELECT covered_immunizations FROM payers WHERE id='a735bf55-83e9-331a-899d-a82a60b9f60c';",
+    "class": "payers"
+  },
+  {
+    "question": "Please provide me the number of encounters covered by the payer Medicaid.",
+    "sql": "SELECT covered_encounters FROM payers WHERE name='Medicaid';",
+    "class": "payers"
+  },
+  {
+    "question": "How many procedures are covered by the payer NO_INSURANCE?",
+    "sql": "SELECT covered_procedures FROM payers WHERE name='NO_INSURANCE';",
+    "class": "payers"
+  },
+  {
+    "question": "How many immunizations are uncovered by the payer with the ID d31fccc3-1767-390d-966a-22a5156f4219?",
+    "sql": "SELECT uncovered_immunizations FROM payers WHERE id='d31fccc3-1767-390d-966a-22a5156f4219';",
+    "class": "payers"
+  },
+  {
+    "question": "Please provide me the number of immunizations uncovered by the payer with the ID 734afbd6-4794-363b-9bc0-6a3981533ed5.",
+    "sql": "SELECT uncovered_immunizations FROM payers WHERE id='734afbd6-4794-363b-9bc0-6a3981533ed5';",
+    "class": "payers"
+  },
+  {
+    "question": "Please provide me the number of encounters uncovered by the payer with the ID 734afbd6-4794-363b-9bc0-6a3981533ed5.",
+    "sql": "SELECT uncovered_encounters FROM payers WHERE id='734afbd6-4794-363b-9bc0-6a3981533ed5';",
+    "class": "payers"
+  },
+  {
+    "question": "How much revenue does the payer Cigna Health generate?",
+    "sql": "SELECT revenue FROM payers WHERE name='Cigna Health';",
+    "class": "payers"
+  },
+  {
+    "question": "Please provide me the number of medications uncovered by the payer with the ID 0133f751-9229-3cfd-815f-b6d4979bdd6a.",
+    "sql": "SELECT uncovered_medications FROM payers WHERE id='0133f751-9229-3cfd-815f-b6d4979bdd6a';",
+    "class": "payers"
+  },
+  {
+    "question": "Please provide me the number of procedures uncovered by the payer NO_INSURANCE.",
+    "sql": "SELECT uncovered_procedures FROM payers WHERE name='NO_INSURANCE';",
+    "class": "payers"
+  },
+  {
+    "question": "Please provide me the number of unique customers of the payer Cigna Health.",
+    "sql": "SELECT unique_customers FROM payers WHERE name='Cigna Health';",
+    "class": "payers"
+  },
+  {
+    "question": "How much revenue does the payer with ID 734afbd6-4794-363b-9bc0-6a3981533ed5 generate?",
+    "sql": "SELECT revenue FROM payers WHERE id='734afbd6-4794-363b-9bc0-6a3981533ed5';",
+    "class": "payers"
+  },
+  {
+    "question": "How many encounters are covered by the payer with the ID 26aab0cd-6aba-3e1b-ac5b-05c8867e762c?",
+    "sql": "SELECT covered_encounters FROM payers WHERE id='26aab0cd-6aba-3e1b-ac5b-05c8867e762c';",
+    "class": "payers"
+  },
+  {
+    "question": "How much revenue does the payer with ID e03e23c9-4df1-3eb6-a62d-f70f02301496 generate?",
+    "sql": "SELECT revenue FROM payers WHERE id='e03e23c9-4df1-3eb6-a62d-f70f02301496';",
+    "class": "payers"
+  },
+  {
+    "question": "What is the name of the payer with the ID 734afbd6-4794-363b-9bc0-6a3981533ed5?",
+    "sql": "SELECT name FROM payers WHERE id='734afbd6-4794-363b-9bc0-6a3981533ed5';",
+    "class": "payers"
+  },
+  {
+    "question": "How many immunizations are uncovered by the payer Cigna Health?",
+    "sql": "SELECT uncovered_procedures FROM payers WHERE name='Cigna Health';",
+    "class": "payers"
+  },
+  {
+    "question": "How many immunizations are uncovered by the payer Blue Cross Blue Shield?",
+    "sql": "SELECT uncovered_procedures FROM payers WHERE name='Blue Cross Blue Shield';",
+    "class": "payers"
+  },
+  {
+    "question": "How much revenue does the payer with ID e03e23c9-4df1-3eb6-a62d-f70f02301496 generate?",
+    "sql": "SELECT revenue FROM payers WHERE id='e03e23c9-4df1-3eb6-a62d-f70f02301496';",
+    "class": "payers"
+  },
+  {
+    "question": "How many procedures are covered by the payer with the ID df166300-5a78-3502-a46a-832842197811?",
+    "sql": "SELECT covered_procedures FROM payers WHERE id='df166300-5a78-3502-a46a-832842197811';",
+    "class": "payers"
+  },
+  {
+    "question": "Please provide the list of patients associated with the payer Blue Cross Blue Shield.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM payers py LEFT JOIN payer_transitions pt ON py.id=pt.payer LEFT JOIN patients p ON pt.patient=p.id WHERE py.name='Blue Cross Blue Shield';",
+    "class": "payers"
+  },
+  {
+    "question": "What is the description of the procedure with the code 454711000124102?",
+    "sql": "SELECT DISTINCT description FROM procedures WHERE code='454711000124102';",
+    "class": "procedures"
+  },
+  {
+    "question": "What is the stop date of the procedure with the code 868187001?",
+    "sql": "SELECT stop FROM procedures WHERE code='868187001';",
+    "class": "procedures"
+  },
+  {
+    "question": "What is the stop date of the procedure with the code 710841007?",
+    "sql": "SELECT stop FROM procedures WHERE code='710841007';",
+    "class": "procedures"
+  },
+  {
+    "question": "What is the start date of the procedure Assessment of substance use (procedure)?",
+    "sql": "SELECT start FROM procedures WHERE description='Assessment of substance use (procedure)';",
+    "class": "procedures"
+  },
+  {
+    "question": "What is the stop date of the procedure with the code 274804006?",
+    "sql": "SELECT stop FROM procedures WHERE code='274804006';",
+    "class": "procedures"
+  },
+  {
+    "question": "What is the reason for performing the procedure Screening for drug abuse (procedure)?",
+    "sql": "SELECT stop FROM procedures WHERE description='Screening for drug abuse (procedure)';",
+    "class": "procedures"
+  },
+  {
+    "question": "Please provide me the patients treated with the procedure of code 274804006.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM procedures pr LEFT JOIN patients p ON pr.patient=p.id WHERE pr.code='274804006';",
+    "class": "procedures"
+  },
+  {
+    "question": "Who has been treated with the procedure of code 430193006?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM procedures pr LEFT JOIN patients p ON pr.patient=p.id WHERE pr.code='430193006';",
+    "class": "procedures"
+  },
+  {
+    "question": "What is the stop date of the procedure with the code 454711000124102?",
+    "sql": "SELECT stop FROM procedures WHERE code='454711000124102';",
+    "class": "procedures"
+  },
+  {
+    "question": "Please provide me the patients treated with the procedure of code 370995009.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM procedures pr LEFT JOIN patients p ON pr.patient=p.id WHERE pr.code='370995009';",
+    "class": "procedures"
+  },
+  {
+    "question": "In which encounter was the procedure Depression screening using Patient Health Questionnaire Two-Item score (procedure) performed?",
+    "sql": "SELECT DISTINCT reasondescription FROM procedures WHERE description='Depression screening using Patient Health Questionnaire Two-Item score (procedure)';",
+    "class": "procedures"
+  },
+  {
+    "question": "Please provide me the encounters that are related to the procedure Depression screening using Patient Health Questionnaire Two-Item score (procedure).",
+    "sql": "SELECT DISTINCT e.description FROM procedures pr LEFT JOIN encounters e ON pr.encounter=e.id WHERE pr.description='Depression screening using Patient Health Questionnaire Two-Item score (procedure)';",
+    "class": "procedures"
+  },
+  {
+    "question": "What is the stop date of the procedure Measurement of respiratory function (procedure)?",
+    "sql": "SELECT DISTINCT e.description FROM procedures pr LEFT JOIN encounters e ON pr.encounter=e.id WHERE pr.description='Measurement of respiratory function (procedure)';",
+    "class": "procedures"
+  },
+  {
+    "question": "What is the start date of the procedure with the code 171207006?",
+    "sql": "SELECT start FROM procedures WHERE code='171207006';",
+    "class": "procedures"
+  },
+  {
+    "question": "Please provide me the patients treated with the procedure of code 868187001.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM procedures pr LEFT JOIN patients p ON pr.patient=p.id WHERE pr.code='868187001';",
+    "class": "procedures"
+  },
+  {
+    "question": "Please provide me the reason for performing the procedure with code 68254000.",
+    "sql": "SELECT DISTINCT reasondescription FROM procedures WHERE code='68254000';",
+    "class": "procedures"
+  },
+  {
+    "question": "What is the start date of the procedure Standard pregnancy test?",
+    "sql": "SELECT start FROM procedures WHERE description='Standard pregnancy test';",
+    "class": "procedures"
+  },
+  {
+    "question": "Please provide me reasons for performing the procedure Medication Reconciliation (procedure).",
+    "sql": "SELECT reasondescription FROM procedures WHERE description='Medication Reconciliation (procedure)';",
+    "class": "procedures"
+  },
+  {
+    "question": "Please provide me the encounters that were related to the procedure with code 104326007.",
+    "sql": "SELECT DISTINCT e.description FROM procedures pr LEFT JOIN encounters e ON pr.encounter=e.id WHERE pr.code='104326007';",
+    "class": "procedures"
+  },
+  {
+    "question": "What is the start date of the procedure Medication Reconciliation (procedure)?",
+    "sql": "SELECT start FROM procedures WHERE description='Medication Reconciliation (procedure)';",
+    "class": "procedures"
+  },
+  {
+    "question": "What is the reason for performing the procedure with the code 171207006?",
+    "sql": "SELECT DISTINCT reasondescription FROM procedures WHERE code='171207006';",
+    "class": "procedures"
+  },
+  {
+    "question": "What is the reason code for the procedure Depression screening (procedure)?",
+    "sql": "SELECT reasoncode FROM procedures WHERE description='Depression screening (procedure)';",
+    "class": "procedures"
+  },
+  {
+    "question": "Please provide me reasons for performing the procedure Human immunodeficiency virus antigen test.",
+    "sql": "SELECT reasondescription FROM procedures WHERE description='Human immunodeficiency virus antigen test';",
+    "class": "procedures"
+  },
+  {
+    "question": "Please provide me the reason for performing the procedure with code 171207006.",
+    "sql": "SELECT DISTINCT reasondescription FROM procedures WHERE code='171207006';",
+    "class": "procedures"
+  },
+  {
+    "question": "Please provide me the reason for performing the procedure with code 261352009.",
+    "sql": "SELECT DISTINCT reasondescription FROM procedures WHERE code='261352009';",
+    "class": "procedures"
+  },
+  {
+    "question": "What is the reason code for the procedure of code 713106006?",
+    "sql": "SELECT DISTINCT reasoncode FROM procedures WHERE code='713106006';",
+    "class": "procedures"
+  },
+  {
+    "question": "What is the reason for performing the procedure Counseling for termination of pregnancy?",
+    "sql": "SELECT stop FROM procedures WHERE description='Counseling for termination of pregnancy';",
+    "class": "procedures"
+  },
+  {
+    "question": "Please provide me reasons for performing the procedure Assessment of anxiety (procedure).",
+    "sql": "SELECT reasondescription FROM procedures WHERE description='Assessment of anxiety (procedure)';",
+    "class": "procedures"
+  },
+  {
+    "question": "Please provide me the reason for performing the procedure with code 274804006.",
+    "sql": "SELECT DISTINCT reasondescription FROM procedures WHERE code='274804006';",
+    "class": "procedures"
+  },
+  {
+    "question": "Please provide me the encounters that were related to the procedure with code 225158009.",
+    "sql": "SELECT DISTINCT e.description FROM procedures pr LEFT JOIN encounters e ON pr.encounter=e.id WHERE pr.code='225158009';",
+    "class": "procedures"
+  },
+  {
+    "question": "Please provide me the address of the provider with the ID a9047989-df83-362b-ac57-27af658aa179.",
+    "sql": "SELECT address FROM providers WHERE id='a9047989-df83-362b-ac57-27af658aa179';",
+    "class": "providers"
+  },
+  {
+    "question": "What is the specialty of the provider named Jackelyn13 Pacocha935?",
+    "sql": "SELECT speciality FROM providers pr WHERE name='Jackelyn13 Pacocha935';",
+    "class": "providers"
+  },
+  {
+    "question": "What is the specialty of the provider named Frederick289 Bins636?",
+    "sql": "SELECT speciality FROM providers pr WHERE name='Frederick289 Bins636';",
+    "class": "providers"
+  },
+  {
+    "question": "Please provide me the organization affiliated with the provider Florance664 Leannon79.",
+    "sql": "SELECT org.name FROM providers pr LEFT JOIN organizations org ON pr.organization=org.id WHERE pr.name='Florance664 Leannon79';",
+    "class": "providers"
+  },
+  {
+    "question": "What city is the provider with the ID a5ba25f6-d5da-3ee2-9a45-c9f956fe8e58 located in?",
+    "sql": "SELECT city FROM providers WHERE id='a5ba25f6-d5da-3ee2-9a45-c9f956fe8e58';",
+    "class": "providers"
+  },
+  {
+    "question": "What is the address of the provider named Bryon392 Mann644?",
+    "sql": "SELECT address FROM providers pr WHERE name='Bryon392 Mann644';",
+    "class": "providers"
+  },
+  {
+    "question": "What is the gender of the provider with the ID cffffe08-d3fd-3fb9-9a3a-25a4baa37c1f?",
+    "sql": "SELECT gender FROM providers WHERE id='cffffe08-d3fd-3fb9-9a3a-25a4baa37c1f';",
+    "class": "providers"
+  },
+  {
+    "question": "What is the specialty of the provider named Halina47 Pollich983?",
+    "sql": "SELECT speciality FROM providers pr WHERE name='Halina47 Pollich983';",
+    "class": "providers"
+  },
+  {
+    "question": "What is the specialty of the provider with the ID 856fc56d-ef09-36a3-9112-95f298a15c47?",
+    "sql": "SELECT speciality FROM providers WHERE id='856fc56d-ef09-36a3-9112-95f298a15c47';",
+    "class": "providers"
+  },
+  {
+    "question": "What is the address of the provider named Shawn523 Padberg411?",
+    "sql": "SELECT address FROM providers pr WHERE name='Shawn523 Padberg411';",
+    "class": "providers"
+  },
+  {
+    "question": "What is the name of the provider with the ID f2c2a46f-756b-3972-a128-0e9f628679f9?",
+    "sql": "SELECT name FROM providers WHERE id='f2c2a46f-756b-3972-a128-0e9f628679f9';",
+    "class": "providers"
+  },
+  {
+    "question": "What is the name of the provider with the ID f5aa52e2-0a9d-38ed-a7d0-a7c0ba911191?",
+    "sql": "SELECT name FROM providers WHERE id='f5aa52e2-0a9d-38ed-a7d0-a7c0ba911191';",
+    "class": "providers"
+  },
+  {
+    "question": "What is the gender of the provider with the ID b65a8798-f9f2-3b0b-b6c4-02e1ea88cf74?",
+    "sql": "SELECT gender FROM providers WHERE id='b65a8798-f9f2-3b0b-b6c4-02e1ea88cf74';",
+    "class": "providers"
+  },
+  {
+    "question": "Please provide me the organization affiliated with the provider Claudie965 Koch169.",
+    "sql": "SELECT org.name FROM providers pr LEFT JOIN organizations org ON pr.organization=org.id WHERE pr.name='Claudie965 Koch169';",
+    "class": "providers"
+  },
+  {
+    "question": "Which organization is the provider named Kati243 Ruecker817 affiliated with?",
+    "sql": "SELECT org.name FROM providers pr LEFT JOIN organizations org ON pr.organization=org.id WHERE pr.name='Kati243 Ruecker817';",
+    "class": "providers"
+  },
+  {
+    "question": "Please provide me the speciality of the provider with the ID 66feba3e-420e-350f-a793-ce86e57cfeda.",
+    "sql": "SELECT speciality FROM providers WHERE id='66feba3e-420e-350f-a793-ce86e57cfeda';",
+    "class": "providers"
+  },
+  {
+    "question": "What is the gender of the provider named Malka46 Gerhold939?",
+    "sql": "SELECT gender FROM providers pr WHERE name='Malka46 Gerhold939';",
+    "class": "providers"
+  },
+  {
+    "question": "In which city is the provider named Cherrie404 Conn188 located?",
+    "sql": "SELECT city FROM providers pr WHERE name='Cherrie404 Conn188';",
+    "class": "providers"
+  },
+  {
+    "question": "Please provide me the speciality of the provider named Emilio417 Barton704.",
+    "sql": "SELECT speciality FROM providers pr WHERE name='Emilio417 Barton704';",
+    "class": "providers"
+  },
+  {
+    "question": "Please provide me the speciality of the provider named Franklin857 Kohler843.",
+    "sql": "SELECT speciality FROM providers pr WHERE name='Franklin857 Kohler843';",
+    "class": "providers"
+  },
+  {
+    "question": "What city is the provider with the ID ec06a0ad-1ddc-3057-81a8-5bee9bca9fe5 located in?",
+    "sql": "SELECT city FROM providers WHERE id='ec06a0ad-1ddc-3057-81a8-5bee9bca9fe5';",
+    "class": "providers"
+  },
+  {
+    "question": "Please provide me the address of the provider named Ranee391 Turner526.",
+    "sql": "SELECT address FROM providers pr WHERE name='Ranee391 Turner526';",
+    "class": "providers"
+  },
+  {
+    "question": "What is the name of the provider with the ID 35eee250-7f9c-3a87-94d8-0f3da226067a?",
+    "sql": "SELECT name FROM providers WHERE id='35eee250-7f9c-3a87-94d8-0f3da226067a';",
+    "class": "providers"
+  },
+  {
+    "question": "What is the gender of the provider named Penni796 Okuneva707?",
+    "sql": "SELECT gender FROM providers pr WHERE name='Penni796 Okuneva707';",
+    "class": "providers"
+  },
+  {
+    "question": "Which organization is the provider with the ID 8428b2d8-757e-30f8-9929-9ee81bacf25d affiliated with?",
+    "sql": "SELECT org.name FROM providers pr LEFT JOIN organizations org ON pr.organization=org.id WHERE pr.id='8428b2d8-757e-30f8-9929-9ee81bacf25d';",
+    "class": "providers"
+  },
+  {
+    "question": "In which city is the provider named Lincoln623 Gibson10 located?",
+    "sql": "SELECT city FROM providers pr WHERE name='Lincoln623 Gibson10';",
+    "class": "providers"
+  },
+  {
+    "question": "Which organization is the provider named Virgina372 Reilly981 affiliated with?",
+    "sql": "SELECT org.name FROM providers pr LEFT JOIN organizations org ON pr.organization=org.id WHERE pr.name='Virgina372 Reilly981';",
+    "class": "providers"
+  },
+  {
+    "question": "Please provide me the speciality of the provider with the ID b07c5fb1-6445-3fec-b6b4-89fafc213790.",
+    "sql": "SELECT speciality FROM providers WHERE id='b07c5fb1-6445-3fec-b6b4-89fafc213790';",
+    "class": "providers"
+  },
+  {
+    "question": "What is the specialty of the provider named Abdul218 White193?",
+    "sql": "SELECT speciality FROM providers pr WHERE name='Abdul218 White193';",
+    "class": "providers"
+  },
+  {
+    "question": "Please provide me the address of the provider with the ID 8d10b1d1-5090-3e9f-8cb2-683f447f97ef.",
+    "sql": "SELECT address FROM providers WHERE id='8d10b1d1-5090-3e9f-8cb2-683f447f97ef';",
+    "class": "providers"
+  },
+  {
+    "question": "Please provide me the encounters that were related to the supply named Medical air low pressure tubing (physical object).",
+    "sql": "SELECT DISTINCT enc.description FROM supplies s LEFT JOIN encounters enc ON s.encounter=enc.id WHERE s.description='Medical air low pressure tubing (physical object)';",
+    "class": "supplies"
+  },
+  {
+    "question": "Please provide me the quality for the supply with the code 972002.",
+    "sql": "SELECT DISTINCT quantity FROM supplies s WHERE code='972002';",
+    "class": "supplies"
+  },
+  {
+    "question": "What is the name of the supply with the code 337388004?",
+    "sql": "SELECT DISTINCT description FROM supplies s WHERE code='337388004';",
+    "class": "supplies"
+  },
+  {
+    "question": "Who is the patient associated with the supply with the code 337388004?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM supplies s LEFT JOIN patients p ON s.patient=p.id WHERE s.code='337388004';",
+    "class": "supplies"
+  },
+  {
+    "question": "What is the quality of the supply with the code 337388004?",
+    "sql": "SELECT DISTINCT quantity FROM supplies s WHERE code='337388004';",
+    "class": "supplies"
+  },
+  {
+    "question": "What encounter is associated with the supply with the code 419343004?",
+    "sql": "SELECT DISTINCT e.description FROM supplies s LEFT JOIN encounters e ON s.encounter=e.id WHERE s.code='419343004';",
+    "class": "supplies"
+  },
+  {
+    "question": "Who is the patient associated with the supply named Continuous positive airway pressure nasal oxygen cannula (physical object)?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM supplies s LEFT JOIN patients p ON s.patient=p.id WHERE s.description='Continuous positive airway pressure nasal oxygen cannula (physical object)';",
+    "class": "supplies"
+  },
+  {
+    "question": "What is the quality of the supply named Blood glucose testing strips (physical object)?",
+    "sql": "SELECT DISTINCT quantity FROM supplies s WHERE description='Blood glucose testing strips (physical object)';",
+    "class": "supplies"
+  },
+  {
+    "question": "What is the quality of the supply named Continuous positive airway pressure/Bilevel positive airway pressure mask (physical object)?",
+    "sql": "SELECT DISTINCT quantity FROM supplies s WHERE description='Continuous positive airway pressure/Bilevel positive airway pressure mask (physical object)';",
+    "class": "supplies"
+  },
+  {
+    "question": "Please provide me the encounters that were related to the supply with the code 706226000.",
+    "sql": "SELECT DISTINCT e.description FROM supplies s LEFT JOIN encounters e ON s.encounter=e.id WHERE s.code='706226000';",
+    "class": "supplies"
+  },
+  {
+    "question": "Please provide me the patients associated with the supply named Blood glucose testing strips (physical object).",
+    "sql": "SELECT DISTINCT p.first, p.last FROM supplies s LEFT JOIN patients p ON s.patient=p.id WHERE s.description='Blood glucose testing strips (physical object)';",
+    "class": "supplies"
+  },
+  {
+    "question": "Please provide me the encounters that were related to the supply named Air filter  device (physical object).",
+    "sql": "SELECT DISTINCT enc.description FROM supplies s LEFT JOIN encounters enc ON s.encounter=enc.id WHERE s.description='Air filter  device (physical object)';",
+    "class": "supplies"
+  },
+  {
+    "question": "What encounter is associated with the supply named Blood glucose testing strips (physical object)?",
+    "sql": "SELECT DISTINCT e.description FROM supplies s LEFT JOIN encounters e ON s.encounter=e.id WHERE s.code='337388004';",
+    "class": "supplies"
+  },
+  {
+    "question": "Please provide me the patient with the supply with the code 337388004.",
+    "sql": "SELECT DISTINCT p.first, p.last FROM supplies s LEFT JOIN patients p ON s.patient=p.id WHERE s.code='337388004';",
+    "class": "supplies"
+  },
+  {
+    "question": "Please provide me the quantity of the supply named Continuous positive airway pressure/Bilevel positive airway pressure mask (physical object).",
+    "sql": "SELECT DISTINCT quantity FROM supplies s WHERE description='Continuous positive airway pressure/Bilevel positive airway pressure mask (physical object)';",
+    "class": "supplies"
+  },
+  {
+    "question": "What is the quality of the supply named Blood glucose testing strips (physical object)?",
+    "sql": "SELECT DISTINCT quantity FROM supplies s WHERE description='Blood glucose testing strips (physical object)';",
+    "class": "supplies"
+  },
+  {
+    "question": "What is the name of the supply with the code 713779008?",
+    "sql": "SELECT DISTINCT description FROM supplies s WHERE code='713779008';",
+    "class": "supplies"
+  },
+  {
+    "question": "What encounter is associated with the supply named Blood glucose testing strips (physical object)?",
+    "sql": "SELECT DISTINCT e.description FROM supplies s LEFT JOIN encounters e ON s.encounter=e.id WHERE s.code='337388004';",
+    "class": "supplies"
+  },
+  {
+    "question": "What is the quality of the supply with the code 972002?",
+    "sql": "SELECT DISTINCT quantity FROM supplies s WHERE code='972002';",
+    "class": "supplies"
+  },
+  {
+    "question": "Please provide me the patients associated with the supply named Continuous positive airway pressure nasal oxygen cannula (physical object).",
+    "sql": "SELECT DISTINCT p.first, p.last FROM supplies s LEFT JOIN patients p ON s.patient=p.id WHERE s.description='Continuous positive airway pressure nasal oxygen cannula (physical object)';",
+    "class": "supplies"
+  },
+  {
+    "question": "What is the quality of the supply with the code 337388004?",
+    "sql": "SELECT DISTINCT quantity FROM supplies s WHERE code='337388004';",
+    "class": "supplies"
+  },
+  {
+    "question": "What encounter is associated with the supply named Disposable air-purifying respirator (physical object)?",
+    "sql": "SELECT DISTINCT e.description FROM supplies s LEFT JOIN encounters e ON s.encounter=e.id WHERE s.code='409534002';",
+    "class": "supplies"
+  },
+  {
+    "question": "When was the supply Solution (substance) recorded?",
+    "sql": "SELECT DISTINCT date FROM supplies WHERE description='Solution (substance)';",
+    "class": "supplies"
+  },
+  {
+    "question": "Who is the patient associated with the supply with the code 337388004?",
+    "sql": "SELECT DISTINCT p.first, p.last FROM supplies s LEFT JOIN patients p ON s.patient=p.id WHERE s.code='337388004';",
+    "class": "supplies"
+  },
+  {
+    "question": "What encounter is associated with the supply with the code 713779008?",
+    "sql": "SELECT DISTINCT e.description FROM supplies s LEFT JOIN encounters e ON s.encounter=e.id WHERE s.code='713779008';",
+    "class": "supplies"
+  },
+  {
+    "question": "Please provide me the encounters that were related to the supply with the code 463659001.",
+    "sql": "SELECT DISTINCT e.description FROM supplies s LEFT JOIN encounters e ON s.encounter=e.id WHERE s.code='463659001';",
+    "class": "supplies"
+  },
+  {
+    "question": "Please provide me the quality for the supply with the code 972002.",
+    "sql": "SELECT DISTINCT quantity FROM supplies s WHERE code='972002';",
+    "class": "supplies"
+  },
+  {
+    "question": "Please provide me the encounters that were related to the supply named Medical air low pressure tubing (physical object).",
+    "sql": "SELECT DISTINCT enc.description FROM supplies s LEFT JOIN encounters enc ON s.encounter=enc.id WHERE s.description='Medical air low pressure tubing (physical object)';",
+    "class": "supplies"
+  },
+  {
+    "question": "Please provide me the quantity of the supply named Continuous positive airway pressure nasal oxygen cannula (physical object).",
+    "sql": "SELECT DISTINCT quantity FROM supplies s WHERE description='Continuous positive airway pressure nasal oxygen cannula (physical object)';",
+    "class": "supplies"
+  },
+  {
+    "question": "What encounter is associated with the supply with the code 1137596000?",
+    "sql": "SELECT DISTINCT e.description FROM supplies s LEFT JOIN encounters e ON s.encounter=e.id WHERE s.code='1137596000';",
+    "class": "supplies"
+  }
+]
