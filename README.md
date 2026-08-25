@@ -47,11 +47,13 @@ any provider works. Set an API key and (optionally) a model:
 
 ```bash
 export ANTHROPIC_API_KEY=sk-...                     # or OPENAI_API_KEY, etc.
-export FLINT_MODEL=anthropic/claude-3-5-sonnet-latest
+export FLINT_MODEL=anthropic/claude-opus-4-6
 ```
 
-Any litellm model string works (`anthropic/...`, `openai/gpt-4o`, ...). To route
-through an OpenAI-compatible proxy instead, set `LLM_BASE_URL`.
+The default model is **Claude Opus 4.6**, which produced the results reported in
+the paper. Any litellm model string works (`anthropic/...`, `openai/gpt-4o`,
+...); set `FLINT_MODEL` to the exact model id your provider or proxy exposes.
+To route through an OpenAI-compatible proxy instead, set `LLM_BASE_URL`.
 
 ## Run
 

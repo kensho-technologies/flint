@@ -7,6 +7,8 @@ package that defines ``DATASET = Dataset(...)`` and register it below.
 from .base import Dataset
 from . import cordis, oncomx, sdss, sm3
 
+__all__ = ["Dataset", "REGISTRY", "available", "get_dataset"]
+
 REGISTRY = {d.name: d for d in (cordis.DATASET, oncomx.DATASET, sdss.DATASET, sm3.DATASET)}
 
 
