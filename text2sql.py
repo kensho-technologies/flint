@@ -50,9 +50,10 @@ litellm.num_retries = 3
 # Any litellm-supported model string works (anthropic/..., openai/..., etc.).
 # Override with the FLINT_MODEL env var. Keys are read from the environment by
 # litellm (ANTHROPIC_API_KEY, OPENAI_API_KEY, ...).
-# The paper's reported results use Claude Opus 4.6; set FLINT_MODEL to the exact
-# model id your provider/proxy exposes if it differs from the string below.
-DEFAULT_MODEL = os.getenv("FLINT_MODEL", "anthropic/claude-opus-4-6")
+# The paper's reported results use Claude Opus 4.6, pinned to the dated snapshot
+# below for reproducibility. Set FLINT_MODEL to the exact model id your
+# provider/proxy exposes if it differs.
+DEFAULT_MODEL = os.getenv("FLINT_MODEL", "anthropic/claude-opus-4-6-20260205")
 
 
 # --------------------------------------------------------------------------- #
