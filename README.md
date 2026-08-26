@@ -147,3 +147,8 @@ credit to the original authors — please cite them if you use these datasets.
 
 To add a new benchmark, drop a `datasets/<name>.py` module with its domain rules
 (and a bundled bank only if you have the right to redistribute it).
+
+
+## Prompts
+
+We also include sanitized versions of the prompts used in our own system in the `prompts`  folder.
