@@ -26,7 +26,7 @@ datasets/
     sdss.py          # astronomy (SDSS) domain rules
     sm3.py           # medical / Synthea (SM3) domain rules
     data/
-        sm3_query_bank.json   # SM3 few-shot bank (510 examples, Apache-2.0)
+        sm3_query_bank.json   # SM3 few-shot bank (510 examples)
 ```
 
 The runner toggles on `--dataset` and automatically pulls that dataset's domain
@@ -143,16 +143,14 @@ credit to the original authors — please cite them if you use these datasets.
   (https://github.com/jf87/SM3-Text-to-Query) — download it from there. The
   few-shot bank we ship at `datasets/data/sm3_query_bank.json` (510 examples) is
   **created by subsampling the SM3 training data** (~510 of its ~6,000 train
-  rows) and reformatting to `{question, sql}`; SM3 is **Apache-2.0**, so
-  redistributing this subset with attribution is permitted. You still need the
+  rows) and reformatting to `{question, sql}`. You still need the
   SM3 database + schema from the official repo to execute queries.
   *How the few-shot bank is formed:* a subsample of the SM3 train split (bundled
   here); retrieval draws the top-k from it.
 
 - **ScienceBenchmark** — CORDIS (EU research funding), OncoMX (cancer
   biomarkers), and SDSS (astronomy). **Get the data from the official repo**
-  (https://github.com/ckosten/sciencebenchmark_dataset). It has **no license
-  file**, so we do **not** redistribute any of it: no schema, no query bank.
+  (https://github.com/ckosten/sciencebenchmark_dataset).
   Download it from the authors; the few-shot bank is each database's
   `seed.json`, which you pass via `--examples`.
   *How the few-shot bank is formed:* the benchmark's own `seed.json` for that
