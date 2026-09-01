@@ -98,6 +98,21 @@ python text2sql.py --mode flint --dataset cordis \
 "query"}`) and overrides the bundled bank. See **Data sources & attribution**
 below for where each dataset comes from.
 
+By default the CLI prints the first generated query. To run the **full FLINT
+loop** — execute the SQL and reflect once if it raises an execution error,
+exactly as the paper's numbers were produced — pass `--db-dsn` with a Postgres
+connection string:
+
+```bash
+python text2sql.py --mode flint --dataset sm3 \
+    --schema "$(cat sm3_schema.txt)" \
+    --question "How many patients are allergic to penicillin?" \
+    --db-dsn "dbname=sm3 host=localhost user=me password=..."
+```
+
+Reflection fires only on an execution error; a legitimately empty result set is
+a valid answer and is left as-is.
+
 Use it as a library:
 
 ```python
@@ -110,10 +125,10 @@ sql = asyncio.run(generate_sql("List the longest films", MY_SCHEMA, mode="few-sh
 print(sql)
 ```
 
-To enable the reflection step, pass `solve(..., execute=fn)` where `fn` is a
-callable `sql -> (rows, error)` backed by your own database connection
-(psycopg2, sqlite3, etc.). No database code ships here, so the agent has no DB
-dependency of its own.
+To enable the reflection step programmatically, call `solve(..., execute=fn)`
+where `fn` is a callable `sql -> (rows, error)` backed by your own database
+connection. The CLI's `--db-dsn` wires a psycopg2 callback for you; pass your
+own `fn` here to reflect against a different backend (sqlite3, etc.).
 
 ## Data sources & attribution
 

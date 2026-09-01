@@ -36,9 +36,11 @@ import argparse
 import asyncio
 import json
 import os
+import sys
 
 import litellm
 import numpy as np
+import psycopg2
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -260,10 +262,12 @@ async def solve(
     if execute is None:
         return sql
 
-    rows, error = execute(sql)
-    if error or not rows:
-        problem = error or "query returned no rows"
-        sql = await reflect_on_error(question, sql, problem, schema, model=model)
+    _rows, error = execute(sql)
+    if error:
+        # Reflect only on an execution error. An empty result set is a legitimate
+        # answer (e.g. "which allergies does <unknown patient> have?") and must NOT
+        # trigger reflection -- doing so corrupts correct empty answers.
+        sql = await reflect_on_error(question, sql, error, schema, model=model)
     return sql
 
 
@@ -350,6 +354,13 @@ def main():
         "--examples", help="path to a JSON query bank; overrides the dataset's bundled bank",
     )
     parser.add_argument("-k", type=int, default=3, help="number of examples to retrieve")
+    parser.add_argument(
+        "--db-dsn", dest="db_dsn", default=None,
+        help="Postgres DSN (e.g. 'dbname=sm3 host=... user=... password=...'). When "
+             "given, the runner EXECUTES the generated SQL and reflects once on an "
+             "execution error -- the full FLINT loop used for the paper's numbers. "
+             "Omit for generation-only output (no database dependency).",
+    )
     args = parser.parse_args()
 
     if args.demo:
@@ -372,12 +383,40 @@ def main():
     if args.mode in ("few-shot", "flint"):
         retriever = SimpleRetriever(_resolve_examples(args, ds))
 
-    sql = asyncio.run(
-        generate_sql(
-            args.question, args.schema, model=args.model, mode=args.mode,
-            retriever=retriever, k=args.k, domain=domain, domain_rules=domain_rules,
+    if args.db_dsn:
+        # Full FLINT loop: execute the generated SQL against the database and let
+        # solve() reflect once if it errors.
+        conn = psycopg2.connect(args.db_dsn)
+
+        def execute(sql):
+            try:
+                with conn.cursor() as cur:
+                    cur.execute(sql)
+                    rows = cur.fetchall() if cur.description else []
+                conn.commit()
+                return rows, None
+            except Exception as exc:  # noqa: BLE001 - surface any DB error to reflection
+                conn.rollback()
+                print(f"[runner] query failed, reflecting once: {exc}", file=sys.stderr)
+                return [], f"ERROR: {exc}"
+
+        try:
+            sql = asyncio.run(
+                solve(
+                    args.question, args.schema, model=args.model, mode=args.mode,
+                    retriever=retriever, k=args.k, domain=domain,
+                    domain_rules=domain_rules, execute=execute,
+                )
+            )
+        finally:
+            conn.close()
+    else:
+        sql = asyncio.run(
+            generate_sql(
+                args.question, args.schema, model=args.model, mode=args.mode,
+                retriever=retriever, k=args.k, domain=domain, domain_rules=domain_rules,
+            )
         )
-    )
     print(sql)
 
 
