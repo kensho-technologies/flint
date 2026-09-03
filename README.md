@@ -1,23 +1,25 @@
-# FLINT — minimal standalone text-to-SQL agent
+# FLINT — a staged text-to-SQL agent
 
-A small, self-contained reference implementation of the text-to-SQL agent behind
+A self-contained reference implementation of the text-to-SQL agent behind
 the paper *From Benchmarks to Production: A Text-to-SQL System for Complex
-Financial Data*. It runs on **public data only** and depends on **no proprietary
-system** — every component is standard, published technique.
+Financial Data*. It runs on **public data only**.
 
-The agent is four steps:
+The agent is a [LangGraph](https://github.com/langchain-ai/langgraph)
+`StateGraph` with six stages:
 
 1. **Retrieve** similar examples — TF-IDF + cosine similarity over a small query bank.
-2. **Link schema** — implicit in the prompt (the schema is passed in full).
-3. **Generate** SQL — one LLM call with the schema + retrieved examples (+ optional domain rules).
-4. **Reflect** — on execution error or empty results, feed the problem back and ask for a fix (optional; needs a database).
+2. **Lookup** values — resolve the concepts in the question (a category code, an exact label) to the values actually stored in the database, by probing `SELECT DISTINCT` columns through it. On by default; no-ops without a database.
+3. **Link schema** — reason over the schema to a flat list of the columns, joins, and filters the answer needs. Opt-in (`--schema-link`): helps FK-dense schemas, can over-constrain elsewhere.
+4. **Generate** SQL — one LLM call with the schema + retrieved examples (+ optional domain rules), with the earlier stages folded in as additive hints.
+5. **Execute** the SQL (only when a database is provided).
+6. **Reflect** once — on an execution error, or when the query returns empty while the lookup stage verified an exact stored value the query's filter didn't use. Otherwise the result stands.
 
 ## Layout
 
 One runner, one prompt module per dataset:
 
 ```
-text2sql.py          # the runner: LLM call, retrieval, prompts, pipeline, CLI
+text2sql.py          # the LangGraph staged agent: LLM call, retrieval, stages, CLI
 datasets/
     base.py          # the Dataset config type
     __init__.py      # registry — maps a name to its config
@@ -73,7 +75,7 @@ python text2sql.py \
 ```
 
 Domain-aware (FLINT) mode. The runner loads the dataset's domain rules **and**
-its few-shot bank automatically. SM3's bank ships with the repo, so this runs
+its few-shot bank automatically. SM3's bank is in this repo, so this runs
 with just a schema:
 
 ```bash
@@ -110,32 +112,34 @@ python text2sql.py --mode flint --dataset sm3 \
     --db-dsn "dbname=sm3 host=localhost user=me password=..."
 ```
 
-Reflection fires only on an execution error; a legitimately empty result set is
-a valid answer and is left as-is.
+Reflection fires once: on an execution error, or when the query returns empty
+and the lookup stage has verified an exact stored value that the query's filter
+did not use (a case- or spelling-mismatched literal — Postgres `=` is
+case-sensitive). A legitimately empty result with no such evidence is a valid
+answer and is left as-is.
 
 Use it as a library:
 
 ```python
 import asyncio
-from text2sql import SimpleRetriever, generate_sql
+from text2sql import SimpleRetriever, solve
 
 examples = [{"question": "How many R-rated films?", "sql": "SELECT COUNT(*) FROM film WHERE rating='R';"}]
 retriever = SimpleRetriever(examples)
-sql = asyncio.run(generate_sql("List the longest films", MY_SCHEMA, mode="few-shot", retriever=retriever))
+sql = asyncio.run(solve("List the longest films", MY_SCHEMA, mode="few-shot", retriever=retriever))
 print(sql)
 ```
 
-To enable the reflection step programmatically, call `solve(..., execute=fn)`
-where `fn` is a callable `sql -> (rows, error)` backed by your own database
-connection. The CLI's `--db-dsn` wires a psycopg2 callback for you; pass your
-own `fn` here to reflect against a different backend (sqlite3, etc.).
+To enable the database-backed stages (lookup + reflect) programmatically, call
+`solve(..., execute=fn)` where `fn` is a callable `sql -> (rows, error)` backed
+by your own database connection. The CLI's `--db-dsn` wires a psycopg2 callback
+for you; pass your own `fn` here to use a different backend (sqlite3, etc.).
 
 ## Data sources & attribution
 
 This agent is evaluated in the paper on two **public** benchmarks, both created
 by other researchers. **Get the datasets themselves from their official
-sources** (linked below) — we ship only the prompts (domain rules) for every
-dataset, plus one small derived query bank where the license permits. Full
+sources**. Full
 credit to the original authors — please cite them if you use these datasets.
 
 - **SM3-Text-to-Query** — medical questions over a Synthea synthetic-patient

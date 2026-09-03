@@ -1,4 +1,6 @@
-litellm>=1.40
-scikit-learn>=1.3
+# FLINT staged text-to-SQL agent (text2sql.py)
+litellm>=1.40            # provider-agnostic LLM calls
+langgraph>=1.2           # staged-agent orchestration
+scikit-learn>=1.3        # TF-IDF few-shot retrieval
 numpy>=1.24
-psycopg2-binary>=2.9
+psycopg2-binary>=2.9     # Postgres execution (lookup + reflect stages)
