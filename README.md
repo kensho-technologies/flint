@@ -1,4 +1,4 @@
-# FLINT — a staged text-to-SQL agent
+# FLINT — a text-to-SQL agent for complex Financial Workflows
 
 A self-contained reference implementation of the text-to-SQL agent behind
 the paper *From Benchmarks to Production: A Text-to-SQL System for Complex
