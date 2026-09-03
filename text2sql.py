@@ -21,7 +21,8 @@ import json
 import os
 import re
 import sys
-from typing import Any, Callable, Optional, TypedDict
+from collections.abc import Callable
+from typing import Any, Optional, TypedDict
 
 import litellm
 import numpy as np
@@ -275,8 +276,7 @@ def strip_markdown_fences(text):
         text = text[6:]
     elif text.startswith("```"):
         text = text[3:]
-    if text.endswith("```"):
-        text = text[:-3]
+    text = text.removesuffix("```")
     return text.strip()
 
 
@@ -299,7 +299,7 @@ def build_prompt(question, schema, mode="few-shot", few_shot_text="", domain="",
 def _schema_table_names(schema):
     """Table names mentioned in the schema text (Table: X / CREATE TABLE X)."""
     names = set()
-    for m in re.finditer(r"(?:table:|create\s+table)\s+[`\"']?(\w+)", schema, re.I):
+    for m in re.finditer(r"(?:table:|create\s+table)\s+[`\"']?(\w+)", schema, re.IGNORECASE):
         names.add(m.group(1).lower())
     return names
 
@@ -361,7 +361,7 @@ def _parse_schema_links(text):
     """The bracketed list after the final 'Schema_Links:' marker (or last [...])."""
     if not text:
         return ""
-    m = list(re.finditer(r"schema_links\s*:", text, re.I))
+    m = list(re.finditer(r"schema_links\s*:", text, re.IGNORECASE))
     tail = text[m[-1].end():] if m else text
     b = tail.find("[")
     e = tail.rfind("]")
