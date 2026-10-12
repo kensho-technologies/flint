@@ -2,7 +2,11 @@
 
 A self-contained reference implementation of the text-to-SQL agent behind
 the paper *From Benchmarks to Production: A Text-to-SQL System for Complex
-Financial Data*. It runs on **public data only**.
+Financial Data* presented at EMNLP Industry Track 2026. It runs on **public data only**.
+
+<p align="center">
+<img src="https://github.com/kensho-technologies/flint/blob/main/text2sql_pipeline.png"  width="800px"/>
+</p>
 
 The agent is a [LangGraph](https://github.com/langchain-ai/langgraph)
 `StateGraph` with six stages:
@@ -11,7 +15,7 @@ The agent is a [LangGraph](https://github.com/langchain-ai/langgraph)
 2. **Lookup** values — resolve the concepts in the question (a category code, an exact label) to the values actually stored in the database, by probing `SELECT DISTINCT` columns through it. On by default; no-ops without a database.
 3. **Link schema** — reason over the schema to a flat list of the columns, joins, and filters the answer needs. Opt-in (`--schema-link`): helps FK-dense schemas, can over-constrain elsewhere.
 4. **Generate** SQL — one LLM call with the schema + retrieved examples (+ optional domain rules), with the earlier stages folded in as additive hints.
-5. **Execute** the SQL (only when a database is provided).
+5. **Execute** the SQL.
 6. **Reflect** once — on an execution error, or when the query returns empty while the lookup stage verified an exact stored value the query's filter didn't use. Otherwise the result stands.
 
 ## Layout
@@ -112,7 +116,7 @@ python text2sql.py --mode flint --dataset sm3 \
     --db-dsn "dbname=sm3 host=localhost user=me password=..."
 ```
 
-Reflection fires once: on an execution error, or when the query returns empty
+Reflection runs once: on an execution error, or when the query returns empty
 and the lookup stage has verified an exact stored value that the query's filter
 did not use (a case- or spelling-mismatched literal — Postgres `=` is
 case-sensitive). A legitimately empty result with no such evidence is a valid
@@ -169,3 +173,17 @@ To add a new benchmark, drop a `datasets/<name>.py` module with its domain rules
 ## Prompts
 
 We also include sanitized versions of the prompts used in our own system in the `prompts`  folder.
+
+## Citation
+If you find our work useful, please cite : 
+
+```bibtex
+@misc{sehanobish2026benchmarksproductiontexttosqlcomplex,
+      title={From Benchmarks to Production: A Text-to-SQL System for Complex Financial Data}, 
+      author={Arijit Sehanobish and Bruno Gomes Coelho and Guillaume Michel and Sophia Zhi and Valerie Faucon-Morin and Kristen Howell},
+      year={2026},
+      eprint={2610.03524},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2610.03524}, 
+}
