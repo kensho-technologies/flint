@@ -4,7 +4,7 @@ A self-contained reference implementation of the text-to-SQL agent behind
 the paper *From Benchmarks to Production: A Text-to-SQL System for Complex
 Financial Data* presented at EMNLP Industry Track 2026. It runs on **public data only**.
 
-This repository is not actively maintained. We are not accepting pull requests or feature requests. You are welcome to fork it under the of the LICENSE file. For questions about the paper or method, please contact the authors at the addresses listed in the papr.
+This repository is not actively maintained. See [CONTRIBUTING.md](./CONTRIBUTING.md) You are welcome to fork it under the of the LICENSE file.
 
 <p align="center">
 <img src="https://github.com/kensho-technologies/flint/blob/main/text2sql_pipeline.png"  width="800px"/>
